@@ -30,7 +30,7 @@
           <i class="fab fa-whatsapp"></i> ¿Tienes una consulta?
         </a>
   <!--         <button>Podcast</button> -->
-        <a class="button" href="https://blog.anibalcopitan.com">Blog sobre Linux y tecnología</a>
+        <a class="button" href="https://blog.anibalcopitan.com">Blog</a>
 
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Reserva una asesoría conmigo</a> -->
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Si te gusto el contenido, considera una donación YAPE/PAYPAL</a> -->
