@@ -29,13 +29,16 @@
         <a class="button" href="https://wa.me/51970142637?text=Hola%2C%20Anibal%20tengo%20una%20consulta">
           <i class="fab fa-whatsapp"></i> ¿Tienes una consulta?
         </a>
+        
   <!--         <button>Podcast</button> -->
         <a class="button" href="https://blog.anibalcopitan.com">Blog</a>
 
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Reserva una asesoría conmigo</a> -->
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Si te gusto el contenido, considera una donación YAPE/PAYPAL</a> -->
 
-
+<a class="button" href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO">
+          <i class="fab fa-whatsapp"></i> 💻 Gente que Ama la Tecnología y los Negocios
+        </a>
 
 
 
@@ -68,6 +71,21 @@
             <br/>
           </div>
         </div>
+
+        <div>
+          <br/>
+          <p><b>💰 "Dona y ayúdame a seguir creando herramientas GRATIS"</b></p>
+<img src="https://mcusercontent.com/e9c62af441ddf5ac2469a4cf0/images/88a77bc5-af0b-1552-fe49-d5d82d945325.jpg" alt="QR Yape Anibal"/>
+<br/>
+<br/>
+
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="A4V4JYZ987JHG" />
+<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" src="https://www.paypal.com/en_AL/i/scr/pixel.gif" width="1" height="1" />
+</form>
+        </div>
+        
         <footer>Inspired By Buffer</footer>
         <hr/> <!-- add for load font fontawesome -->
     </div>
