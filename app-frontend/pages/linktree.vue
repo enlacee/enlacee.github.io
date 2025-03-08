@@ -43,6 +43,12 @@
           <button class="button"><p>PRODUCTOS DIGITALES</p></button>
 
           <div class="product">
+            <a href="https://costoscocteles.anibalcopitan.com/" target="_blank" rel="noopener" title="costoscocteles">
+              <img width="150" src="~/assets/img/product-costoscocteles-150x150.png" alt="costoscocteles" class="img-thumbnail"/>
+              <p>¡Úsala gratis ahora!</p>
+            </a>
+            <br/>
+
             <a href="https://okeypay.anibalcopitan.com/" target="_blank" rel="noopener" title="okeypay">
               <img width="150" src="~/assets/img/product-okeypay-150x150.png" alt="okeypay" class="img-thumbnail"/>
               <p>Verifica pagos yape (S/20.00)</p>
