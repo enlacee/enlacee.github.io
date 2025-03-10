@@ -13,7 +13,20 @@
                     <!-- Producto 3 -->
                     <div class="product-card">
                         <div class="badges">
-                            <span class="badge" data-type="gratis">Gratis en la Nube</span>
+                            <span class="badge" data-type="gratis">Gratis</span>
+                        </div>
+                        <img src="~/assets/img/costoscosteles.png" alt="Costos de Cocteles">
+                        <h2>Calculadora de Costos de Cocteles</h2>
+                        <p>Herramienta web</p>
+                        <div class="payment-buttons">
+                            <button class="btn" data-url="https://costoscocteles.anibalcopitan.com/"
+                            @click="handleClick">Usar Ahora</button>
+                        </div>
+                    </div>
+                    
+<!--                    <div class="product-card">
+                        <div class="badges">
+                            <span class="badge" data-type="gratis">Gratis</span>
                             <span class="badge" data-type="">Sass</span>
                             <span class="badge">Web App</span>
                             <span class="badge">Android App</span>
@@ -28,7 +41,7 @@
                             <button class="btn" data-url="https://reservatotal.anibalcopitan.com/"
                             @click="handleClick">Usar Ahora</button>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="product-card">
                             <div class="badges">
@@ -117,7 +130,7 @@ export default {
     },
     data() {
         return {
-            title: "Tienda",
+            title: "Apps",
             linkTienda: this.isExpanded === true ? '#' : '/tienda',
             linkTiendaOnclick: this.isExpanded === true ? 'return false;' : '' 
         };
