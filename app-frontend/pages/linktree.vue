@@ -26,7 +26,8 @@
             </span>
         </div>
 
-        <a class="button" href="https://wa.me/51970142637?text=Hola%2C%20Anibal%20tengo%20una%20consulta">
+        <a class="button" href="https://wa.me/51970142637?text=Hola%2C%20Anibal%20tengo%20una%20consulta"
+        style="background-color: #25D366;">
           <i class="fab fa-whatsapp"></i> ¿Tienes una consulta?
         </a>
         
@@ -36,10 +37,11 @@
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Reserva una asesoría conmigo</a> -->
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Si te gusto el contenido, considera una donación YAPE/PAYPAL</a> -->
 
-<a class="button" href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO">
+        <!--
+        <a class="button" href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO">
           <i class="fab fa-whatsapp"></i> 💻 Gente que Ama la Tecnología y los Negocios
         </a>
-
+        -->
 
 
         <div class="products">
@@ -74,8 +76,9 @@
 
         <div>
           <br/>
-          <p><b>💰 "Dona y ayúdame a seguir creando herramientas GRATIS"</b></p>
-<img src="https://mcusercontent.com/e9c62af441ddf5ac2469a4cf0/images/88a77bc5-af0b-1552-fe49-d5d82d945325.jpg" alt="QR Yape Anibal"/>
+          <p><b>💰 "Dona y ayúda a seguir con contenido y herramientas GRATIS"</b></p>
+<img src="https://mcusercontent.com/e9c62af441ddf5ac2469a4cf0/images/88a77bc5-af0b-1552-fe49-d5d82d945325.jpg" alt="QR Yape Anibal"
+width="180"/>
 <br/>
 <br/>
 
