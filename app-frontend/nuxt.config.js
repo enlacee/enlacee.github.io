@@ -70,9 +70,14 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      source: 'static/icon.png', // ← imagen base desde la cual se generarán los íconos
+      fileName: 'icon.png'        // nombre base
+    },
     manifest: {
       lang: 'en',
-      name: process.env.VUE_APP_NAME,
+      name: process.env.VUE_APP_NAME || 'Anibal Copitan',
+      short_name: 'Anibal',
       description: process.env.VUE_APP_DESCRIPTION,
     }
   },
