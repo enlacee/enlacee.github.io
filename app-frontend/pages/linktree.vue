@@ -45,24 +45,26 @@
 
 
         <div class="products">
-          <button class="button"><p>PRODUCTOS DIGITALES</p></button>
+          <button class="button"><p><strong>PRODUCTOS DIGITALES</strong></p></button>
 
           <div class="product">
-            <a href="https://costoscocteles.anibalcopitan.com/" target="_blank" rel="noopener" title="costoscocteles">
-              <img width="150" src="~/assets/img/product-costoscocteles-150x150.png" alt="costoscocteles" class="img-thumbnail"/>
-              <p>¡Úsala gratis ahora!</p>
+            <a href="https://wa.me/51970142637?text=Hola%2C%20adjunto%20mi%20comprobante%20de%20pago%20de%20%241%20o%20S%2F4%20para%20descargar%20la%20plantilla%20de%20App%20Script.%20Gracias%21" target="_blank" rel="noopener" title="costoscocteles">
+              <img width="150" src="~/assets/img/plantilla-150x150.png" alt="costoscocteles" class="img-thumbnail"/>
+              <br/>
+              <p>Descargar Plantilla App Script</p>
             </a>
             <br/>
 
             <a href="https://okeypay.anibalcopitan.com/" target="_blank" rel="noopener" title="okeypay">
               <img width="150" src="~/assets/img/product-okeypay-150x150.png" alt="okeypay" class="img-thumbnail"/>
-              <p>Verifica pagos yape (S/20.00)</p>
+              <br/>
+              <p>App OkeyPay Verifica</p>
             </a>
             <br/>
-            <a href="https://a.co/d/2wmoHbw" target="_blank" rel="noopener" title="okeypay">
+            <!-- <a href="https://a.co/d/2wmoHbw" target="_blank" rel="noopener" title="okeypay">
               <img width="150" src="~/assets/img/product-book-150x150.png" alt="okeypay" class="img-thumbnail"/>
               <p>📚 Ebook: Migrando a Lubuntu - Una Guía Linux</p>
-            </a>
+            </a> -->
             <!-- <br/><br/> -->
 <!--
             <a href="#" target="_blank" rel="noopener" title="okeypay">
@@ -74,20 +76,22 @@
           </div>
         </div>
 
+        <!-- 
         <div>
           <br/>
           <p><b>💰 "Dona y ayúda a seguir con contenido y herramientas GRATIS"</b></p>
-<img src="https://mcusercontent.com/e9c62af441ddf5ac2469a4cf0/images/88a77bc5-af0b-1552-fe49-d5d82d945325.jpg" alt="QR Yape Anibal"
-width="180"/>
-<br/>
-<br/>
+          <img src="https://mcusercontent.com/e9c62af441ddf5ac2469a4cf0/images/88a77bc5-af0b-1552-fe49-d5d82d945325.jpg" alt="QR Yape Anibal"
+          width="180"/>
+          <br/>
+          <br/>
 
-<form action="https://www.paypal.com/donate" method="post" target="_top">
-<input type="hidden" name="hosted_button_id" value="A4V4JYZ987JHG" />
-<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" src="https://www.paypal.com/en_AL/i/scr/pixel.gif" width="1" height="1" />
-</form>
+          <form action="https://www.paypal.com/donate" method="post" target="_top">
+          <input type="hidden" name="hosted_button_id" value="A4V4JYZ987JHG" />
+          <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          <img alt="" src="https://www.paypal.com/en_AL/i/scr/pixel.gif" width="1" height="1" />
+          </form>
         </div>
+         -->
         
         <footer>Inspired By Buffer</footer>
         <hr/> <!-- add for load font fontawesome -->
