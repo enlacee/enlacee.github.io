@@ -32,7 +32,7 @@
         </a>
         
   <!--         <button>Podcast</button> -->
-        <a class="button" href="https://blog.anibalcopitan.com">Blog</a>
+        <a class="button" href="https://blog.anibalcopitan.com">👨‍💻 Blog</a>
 
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Reserva una asesoría conmigo</a> -->
 <!--         <a class="button" href="https://blog.anibalcopitan.com">Si te gusto el contenido, considera una donación YAPE/PAYPAL</a> -->

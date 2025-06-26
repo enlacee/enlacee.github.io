@@ -11,18 +11,7 @@
 
                 <div class="product-grid">
                     <!-- Producto 3 -->
-                    <div class="product-card">
-                        <div class="badges">
-                            <span class="badge" data-type="gratis">Gratis</span>
-                        </div>
-                        <img src="~/assets/img/costoscosteles.png" alt="Costos de Cocteles">
-                        <h2>Calculadora de Costos de Cocteles</h2>
-                        <p>Herramienta web</p>
-                        <div class="payment-buttons">
-                            <button class="btn" data-url="https://costoscocteles.anibalcopitan.com/"
-                            @click="handleClick">Usar Ahora</button>
-                        </div>
-                    </div>
+
                     
 <!--                    <div class="product-card">
                         <div class="badges">
@@ -43,26 +32,41 @@
                         </div>
                     </div>-->
 
-                    <div class="product-card">
+                        <div class="product-card">
                             <div class="badges">
-                                <span class="badge" data-type="gratis">Gratis en la Nube</span>
-                                <span class="badge" data-type="">Sass</span>
                                 <span class="badge">Android App</span>
+                                <span class="badge" data-type="">Sass</span>
                                 <span class="badge">🇵🇪</span>
                             </div>
                             <img src="~/assets/img/code-design-okey-pay.png" alt="Producto 3">
-                            <h2>OkeyPay</h2>
+                            <h2>App OkeyPay</h2>
                             <p>Agrega funcionalidades Yape</p>
                             <div class="payment-buttons">
                                 <button class="btn" data-url="https://okeypay.anibalcopitan.com/"
                                 @click="handleClick">Usar Ahora</button>
                             </div>
                         </div>
+                    
+                        <div class="product-card">
+                            <div class="badges">
+                                <span class="badge">Android App</span>
+                                <span class="badge" data-type="">Sass</span>
+                                <span class="badge">🇵🇪</span>
+                            </div>
+                            <img src="~/assets/img/code-design.png" alt="Producto 3">
+                            <h2>App ReservaTotal</h2>
+                            <p>Reserva y paga con Yape</p>
+                            <div class="payment-buttons">
+                                <button class="btn" data-url="https://okeypay.anibalcopitan.com/"
+                                @click="handleClick">Usar Ahora</button>
+                            </div>
+                        </div>
+
 
                         <!-- Producto 1 -->
                         <div class="product-card">
                             <div class="badges">
-                                <span class="badge" data-type="de-pago">De Pago</span>
+                                <!-- <span class="badge" data-type="de-pago">De Pago</span> -->
                                 <span class="badge">Web App</span>
                             </div>
                             <img src="~/assets/img/code-design.png" alt="Producto 2">
@@ -82,7 +86,21 @@
                             </div>
                         </div>
 
-                        <!-- Producto 2 -->
+
+                        <div class="product-card">
+                            <div class="badges">
+                                <!-- <span class="badge" data-type="gratis">Gratis</span> -->
+                            </div>
+                            <img src="~/assets/img/costoscosteles.png" alt="Costos de Cocteles">
+                            <h2>Calculadora de Costos de Cocteles</h2>
+                            <p>Herramienta web</p>
+                            <div class="payment-buttons">
+                                <button class="btn" data-url="https://costoscocteles.anibalcopitan.com/"
+                                @click="handleClick">Usar Ahora</button>
+                            </div>
+                        </div>
+
+                        <!-- Producto 2 
                         <div class="product-card">
                             <div class="badges">
                                 <span class="badge" data-type="gratis">Gratis</span>
@@ -96,9 +114,9 @@
                                 <button class="btn free" data-url="https://github.com/enlacee/tareas-random/archive/refs/heads/master.zip"
                                 @click="handleClick"
                                 >Descargar Gratis</button>
-                                <!-- <a href="#" target="_blank" class="btn" rel="noopener noreferrer">Más Información</a> -->
+                                <a href="#" target="_blank" class="btn" rel="noopener noreferrer">Más Información</a>
                             </div>
-                        </div>
+                        </div>-->
 
                     <!-- <a href="#">
                         <div class="product-card">
