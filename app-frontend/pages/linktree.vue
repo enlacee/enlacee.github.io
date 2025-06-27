@@ -1,13 +1,23 @@
 <template>
   <div class="main-layout">
     <div class="profile-card">
+        <!-- <img src="~/assets/img/profile-tiktok.jpg" alt="Anibal tiktok" class="profile-pic"/> -->
+        <img src="~/assets/img/profile-tiktokv2.jpg" alt="Anibal tiktok" class="profile-pic"/>
+        <!-- 
+                <h1>Anibal Copitan</h1>
+                <p>Te ayudo a alcanzar tus metas con software</p>
+                <p>🐧 Linux - Dev - Side-Projects</p>
+        -->
+        <h1>Únete a la Comunidad Aníbal Linux</h1>
+        <p>¿Quieres aprender Linux, Bash, programación y hacking conmigo? ¡Únete a nuestra comunidad!</p>
 
-        <img src="~/assets/img/profile-tiktok.jpg" alt="Anibal tiktok" class="profile-pic"/>
-
-        <h1>Anibal Copitan</h1>
-        <p>Te ayudo a alcanzar tus metas con software</p>
-        <p>🐧 Linux - Dev - Side-Projects</p>
-
+        <a class="button" href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO?mode=r_c"
+        style="background-color: #25D366;">
+        <i class="fab fa-whatsappx">👥 </i> <strong>Grupo de Linux en WhatsApp</strong>
+        </a>
+        
+        
+        
         <div class="social-icons">
             <span>
               <a href="https://www.youtube.com/@anibal-linux">
@@ -28,7 +38,7 @@
 
         <a class="button" href="https://wa.me/51970142637?text=Hola%2C%20Anibal%20tengo%20una%20consulta"
         style="background-color: #25D366;">
-          <i class="fab fa-whatsapp"></i> ¿Tienes una consulta?
+          <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         
   <!--         <button>Podcast</button> -->

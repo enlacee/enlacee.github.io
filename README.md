@@ -60,6 +60,11 @@ v3: Marca personal simple the first view (desktop/mobile)
 
 ![website](docs/README/v3.png)
 
+v4: linktree
+![website](docs/README/linktree-v1-v2.png)
+
+
+
 ## Configuration
 
 mv .env.dist .env
