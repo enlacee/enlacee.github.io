@@ -22,6 +22,9 @@ You needed debuger step to step the image `Dockerfile` or docker command
     # into bash
     yarn install
     yarn dev
+    # for production
+    yarn build
+    yarn generate
 ```
 Explain last command line docker (building the temporal container) (development mood)
 

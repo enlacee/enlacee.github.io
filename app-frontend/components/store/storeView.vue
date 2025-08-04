@@ -33,56 +33,42 @@
                     </div>-->
 
                         <div class="product-card">
-                            <div class="badges">
+                            <!-- <div class="badges">
                                 <span class="badge">Android App</span>
                                 <span class="badge" data-type="">Sass</span>
                                 <span class="badge">🇵🇪</span>
-                            </div>
+                            </div> -->
                             <img src="~/assets/img/code-design-okey-pay.png" alt="Producto 3">
                             <h2>App OkeyPay</h2>
-                            <p>Agrega funcionalidades Yape</p>
+                            <p>Verifica transacciones Yape/Nequi</p>
                             <div class="payment-buttons">
                                 <button class="btn" data-url="https://okeypay.anibalcopitan.com/"
-                                @click="handleClick">Usar Ahora</button>
+                                @click="handleClick">Disponible en GooglePlay</button>
                             </div>
                         </div>
                     
                         <div class="product-card">
-                            <div class="badges">
-                                <span class="badge">Android App</span>
-                                <span class="badge" data-type="">Sass</span>
-                                <span class="badge">🇵🇪</span>
-                            </div>
                             <img src="~/assets/img/code-design.png" alt="Producto 3">
                             <h2>App ReservaTotal</h2>
                             <p>Reserva y paga con Yape</p>
                             <div class="payment-buttons">
-                                <button class="btn" data-url="https://okeypay.anibalcopitan.com/"
-                                @click="handleClick">Usar Ahora</button>
+                                <button class="btn" data-url="https://reservatotal.anibalcopitan.com/"
+                                @click="handleClick">Probar Demo</button>
                             </div>
                         </div>
 
 
                         <!-- Producto 1 -->
                         <div class="product-card">
-                            <div class="badges">
-                                <!-- <span class="badge" data-type="de-pago">De Pago</span> -->
-                                <span class="badge">Web App</span>
-                            </div>
                             <img src="~/assets/img/code-design.png" alt="Producto 2">
                             <h2>Simple youtube</h2>
-                            <p>PHP - JS</p>
+                            <p>Tu Youtube en tu propio servidor / PHP - JS</p>
                             <div class="payment-buttons">
                                 <a href="http://local.anibalcopitan.com/projects/simple-youtube/index.php?q=maria" target="_blank" class="btn" rel="noopener noreferrer">Ver Demo</a>
                                 <button class="btn yape"
                                 @click="handleClick"
                                 data-url="https://wa.me/51970142637?text=Hola,%20quiero%20comprar%20el%20producto%20SIMPLE%20YOUTUBE.%20Voy%20a%20realizar%20el%20pago%20de%20$2%20USD%20o%20S/7.50%20(equivalente%20en%20soles).%20Por%20favor,%20confirma%20una%20vez%20que%20hayas%20recibido%20el%20pago.%20¡Gracias!"
-                                >Comprar con Yape</button>
-                                <button class="btn paypal"
-                                @click="handleClick"
-                                data-url="https://wa.me/51970142637?text=Para%20comprar%20SIMPLE%20YOUTUBE,%20transfiere%20$2%20USD%20o%20S/7.50%20a%20nuestro%20PayPal:%20acopitan@gmail.com.%20Luego,%20confirma%20aquí%20para%20procesar%20tu%20pedido.%20¡Gracias!"
-                                >Comprar con PayPal</button>
-                                <!-- <a href="#" target="_blank" class="btn" rel="noopener noreferrer">Más Información</a> -->
+                                >Comprar</button>
                             </div>
                         </div>
 
@@ -93,30 +79,25 @@
                             </div>
                             <img src="~/assets/img/costoscosteles.png" alt="Costos de Cocteles">
                             <h2>Calculadora de Costos de Cocteles</h2>
-                            <p>Herramienta web</p>
+                            <p>Herramienta web - Gastos y Costes</p>
                             <div class="payment-buttons">
                                 <button class="btn" data-url="https://costoscocteles.anibalcopitan.com/"
                                 @click="handleClick">Usar Ahora</button>
                             </div>
                         </div>
 
-                        <!-- Producto 2 
+                        
+
+                        
                         <div class="product-card">
-                            <div class="badges">
-                                <span class="badge" data-type="gratis">Gratis</span>
-                                <span class="badge">Web App</span>
-                            </div>
-                            <img src="~/assets/img/code-design.png" alt="Producto 1">
-                            <h2>Tareas aleatoreas</h2>
-                            <p>JS</p>
+                            <img src="~/assets/img/match-making-tool-dota2.png" alt="Match Making tool dota2">
+                            <h2>Generardor de batallas - Dota 2</h2>
+                            <p>Herramienta - Gestion - Generador de imagenes</p>
                             <div class="payment-buttons">
-                                <a href="http://enlacee.github.io/tareas-random" target="_blank" class="btn" rel="noopener noreferrer">Ver Demo</a>
-                                <button class="btn free" data-url="https://github.com/enlacee/tareas-random/archive/refs/heads/master.zip"
-                                @click="handleClick"
-                                >Descargar Gratis</button>
-                                <a href="#" target="_blank" class="btn" rel="noopener noreferrer">Más Información</a>
+                                <button class="btn" data-url="https://costoscocteles.anibalcopitan.com/"
+                                @click="handleClick">Ver Herramienta</button>
                             </div>
-                        </div>-->
+                        </div>
 
                     <!-- <a href="#">
                         <div class="product-card">
