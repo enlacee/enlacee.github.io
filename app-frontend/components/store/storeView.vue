@@ -94,7 +94,7 @@
                             <h2>Generardor de batallas - Dota 2</h2>
                             <p>Herramienta - Gestion - Generador de imagenes</p>
                             <div class="payment-buttons">
-                                <button class="btn" data-url="https://costoscocteles.anibalcopitan.com/"
+                                <button class="btn" data-url="https://anibalcopitan.com/match-making-dota-2/"
                                 @click="handleClick">Ver Herramienta</button>
                             </div>
                         </div>
