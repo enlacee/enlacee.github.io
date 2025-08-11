@@ -58,19 +58,26 @@
           <button class="button"><p><strong>PRODUCTOS DIGITALES</strong></p></button>
 
           <div class="product">
-            <a href="https://wa.me/51970142637?text=Hola%2C%20adjunto%20mi%20comprobante%20de%20pago%20de%20%241%20o%20S%2F4%20para%20descargar%20la%20plantilla%20de%20App%20Script.%20Gracias%21" target="_blank" rel="noopener" title="costoscocteles">
-              <img width="150" src="~/assets/img/plantilla-150x150.png" alt="costoscocteles" class="img-thumbnail"/>
-              <br/>
-              <p>Descargar Plantilla App Script</p>
-            </a>
-            <br/>
-
             <a href="https://okeypay.anibalcopitan.com/" target="_blank" rel="noopener" title="okeypay">
               <img width="150" src="~/assets/img/product-okeypay-150x150.png" alt="okeypay" class="img-thumbnail"/>
               <br/>
               <p>App OkeyPay Verifica</p>
             </a>
-            <br/>
+          </div>
+
+          <div class="product">
+            <a href="https://a.co/d/2wmoHbw" target="_blank" rel="noopener" title="Migrando a Linux">
+              <img width="150" src="~/assets/img/product-book-150x150v2.png" alt="Migrando a Linux" class="img-thumbnail"/>
+              <p>Migrando a Linux - Tú Guía - Ebook</p>
+            </a>
+          </div>
+          <div class="product">
+            <a href="https://wa.me/51970142637?text=Hola%2C%20adjunto%20mi%20comprobante%20de%20pago%20de%20%241%20o%20S%2F4%20para%20descargar%20la%20plantilla%20de%20App%20Script.%20Gracias%21" target="_blank" rel="noopener" title="costoscocteles">
+              <img width="150" src="~/assets/img/plantilla-150x150.png" alt="costoscocteles" class="img-thumbnail"/>
+              <br/>
+              <p>Descargar Plantilla App Script</p>
+            </a>
+          </div>
             <!-- <a href="https://a.co/d/2wmoHbw" target="_blank" rel="noopener" title="okeypay">
               <img width="150" src="~/assets/img/product-book-150x150.png" alt="okeypay" class="img-thumbnail"/>
               <p>📚 Ebook: Migrando a Lubuntu - Una Guía Linux</p>
@@ -82,8 +89,6 @@
               <p>OkeyPay: verificas pagos yape</p>
             </a>
             -->
-            <br/>
-          </div>
         </div>
 
         <!-- 
@@ -237,6 +242,9 @@ a.button, button {
   width: 100%;
   background-color: #000;
   border-radius: 5px;
+}
+.product{
+  padding: 0 0 1.5em 0
 }
 .products p, .product p{
   color:white;
