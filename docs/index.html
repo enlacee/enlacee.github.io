@@ -59,6 +59,25 @@
             letter-spacing: -0.05em;
         }
 
+        /* Mobile Optimization */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+                /* Smaller H1 */
+            }
+
+            .hero {
+                padding-top: 1rem;
+                /* Less top padding */
+                padding-bottom: 2rem;
+            }
+
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
         h2 {
             font-size: 1.25rem;
             font-weight: 600;
@@ -73,7 +92,8 @@
         }
 
         .btn {
-            display: inline-flex;
+            display: flex;
+            /* Changed from inline-flex for better mobile width */
             align-items: center;
             justify-content: center;
             background-color: var(--green);
@@ -88,7 +108,10 @@
             border: none;
             cursor: pointer;
             width: 100%;
-            max-width: 320px;
+            max-width: 100%;
+            /* Ensure it never overflows parent container */
+            box-sizing: border-box;
+            /* Include padding in width calculation */
         }
 
         .btn:hover {
@@ -346,17 +369,14 @@
     <main class="container">
         <!-- HERO -->
         <section class="hero">
-            <h1>Tu propio VPS en casa, configurado por un experto</h1>
-            <h2 style="font-weight: 500; color: var(--text);">
-                Sin pagos mensuales · Sin complicaciones · Privacidad total
+            <h1>Tu VPS en casa, configurado por experto</h1>
+            <h2 style="font-weight: 500; color: var(--text); font-size: 1.1rem;">
+                Sin mensualidades · Privacidad total
             </h2>
-            <p>
-                Olvídate de configurar servidores desde cero y cometer errores.
-                Te ofrezco <strong>asesoría 1 a 1</strong> para dejar tu servidor funcionando perfectamente,
-                con VPN, bloqueador de anuncios y tu propia nube privada.
-            </p>
-            <p style="font-size: 1rem; margin-top: -1rem;">
-                🚀 Resultados garantizados en una sola sesión.
+            <p style="margin-bottom: 1.5rem;">
+                Te ofrezco <strong>asesoría 1 a 1</strong> para dejar tu servidor funcionando con VPN y nube privada.
+                <br><span style="font-size: 0.9rem; display: block; margin-top: 0.5rem;">🚀 Resultados garantizados en 1
+                    sesión.</span>
             </p>
 
             <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20quiero%20agendar%20una%20asesor%C3%ADa%20para%20armar%20mi%20VPS"
