@@ -215,6 +215,24 @@
             font-weight: 600;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            background-color: #f3f4f6;
+            color: var(--text);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid #e5e7eb;
+        }
+
         .mt-2 {
             margin-top: 0.5rem;
         }
@@ -361,6 +379,79 @@
         .btn-text:hover {
             text-decoration: underline;
         }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .grid-cards {
+            display: block;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            /* Increased from 900px for better horizontal spread */
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .grid-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: #f9fafb;
+            /* Light gray background */
+            padding: 0.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-align: left;
+            margin: 1.5rem 0.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            /* More space after header */
+            border-bottom: 1px solid #e5e7eb;
+            /* Divider line */
+            padding-bottom: 0.75rem;
+            /* Space inside the header */
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            /* Slightly smaller to fit better */
+            line-height: 1;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0;
+            /* Remove margin to align perfectly */
+        }
+
+        .pain {
+            font-size: 0.95rem;
+            color: #ef4444;
+            /* Red for pain */
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .solution {
+            font-size: 0.95rem;
+            color: var(--green);
+            /* Green for solution */
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
@@ -369,10 +460,12 @@
     <main class="container">
         <!-- HERO -->
         <section class="hero">
-            <h1>Tu VPS en casa, configurado por experto</h1>
-            <h2 style="font-weight: 500; color: var(--text); font-size: 1.1rem;">
-                Sin mensualidades · Privacidad total
-            </h2>
+            <h1>Tu VPS en Casa: Aprende y Crea con el Experto</h1>
+            <div class="hero-badges">
+                <span class="badge">🚫 Sin Pagos Mensuales</span>
+                <span class="badge">⚡ Control Total</span>
+                <span class="badge">🔒 100% Tuyo</span>
+            </div>
             <p style="margin-bottom: 1.5rem;">
                 Te ofrezco <strong>asesoría 1 a 1</strong> para dejar tu servidor funcionando con VPN y nube privada.
                 <br><span style="font-size: 0.9rem; display: block; margin-top: 0.5rem;">🚀 Resultados garantizados en 1
@@ -401,6 +494,51 @@
                     target="_blank" class="btn btn-overlay">
                     Quiero mi servidor listo
                 </a>
+            </div>
+        </section>
+
+        <!-- WHY VPS? (PAIN POINTS) -->
+        <section class="pain-points">
+            <h2 style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--text);">
+                3 Problemas que desaparecen al tener tu VPS
+            </h2>
+
+            <div class="grid-cards">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💸</div>
+                        <h3>1. La Trampa de las Suscripciones</h3>
+                    </div>
+                    <p class="pain">Google Drive, Dropbox, Netflix... cada mes te sacan dinero. Al año son cientos de
+                        dólares por espacio que nunca es tuyo.</p>
+                    <p class="solution"><strong>Tu Nube Privada y Gratis.</strong> Un solo pago (tu equipo) y tienes
+                        Terabytes para siempre. Sin cuotas ocultas.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔒</div>
+                        <h3>2. Tus Datos son TU Propiedad</h3>
+                    </div>
+                    <p class="pain">Las grandes empresas escanean tus archivos. Si violas una "regla" oscura, te borran
+                        la cuenta y pierdes todo.</p>
+                    <p class="solution"><strong>Soberanía Digital.</strong> Nadie mira tus archivos. Nadie te puede
+                        borrar. Tú tienes el control físico.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🚀</div>
+                        <h3>3. Rompe las Cadenas Técnicas</h3>
+                    </div>
+                    <p class="pain">¿Quieres montar una web o un bot? Los hostings baratos te limitan y los VPS en la
+                        nube son caros.</p>
+                    <p class="solution"><strong>Potencia Real.</strong> Despliega lo que quieras (Docker, Python, Webs)
+                        sin pedir permiso a nadie.</p>
+                </div>
             </div>
         </section>
 
