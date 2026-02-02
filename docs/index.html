@@ -19,6 +19,11 @@
     <meta property="og:title" content="Anibal Copitan | Experto en Linux y VPS">
     <meta property="og:description" content="Ayudo a montar tu propio Servidor y VPS en casa. Asesoría 1 a 1.">
     <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
+
+    <!-- Google Identity Services SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -468,14 +473,14 @@
                 <span class="badge">🔒 100% Tuyo</span>
             </div>
             <p style="margin-bottom: 1.5rem;">
-                Te ofrezco <strong>asesoría 1 a 1</strong> para dejar tu servidor funcionando con VPN y nube privada.
-                <br><span style="font-size: 0.9rem; display: block; margin-top: 0.5rem;">🚀 Resultados garantizados en 1
+                Te enseño 1 a 1 a montar tu infraestructura con Linux, Docker y Nube Privada.
+                <br><span style="font-size: 0.9rem; display: block; margin-top: 0.5rem;">🚀 Pasa de Junior a Pro en 1
                     sesión.</span>
             </p>
 
             <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20quiero%20agendar%20una%20asesor%C3%ADa%20para%20armar%20mi%20VPS"
                 target="_blank" class="btn">
-                👉 Agendar Asesoría Ahora
+                👉 Agendar Mentoría 1 a 1
             </a>
         </section>
 
@@ -509,36 +514,36 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-icon">💸</div>
-                        <h3>1. La Trampa de las Suscripciones</h3>
+                        <h3>1. La Trampa del Tier Gratuito</h3>
                     </div>
-                    <p class="pain">Google Drive, Dropbox, Netflix... cada mes te sacan dinero. Al año son cientos de
-                        dólares por espacio que nunca es tuyo.</p>
-                    <p class="solution"><strong>Tu Nube Privada y Gratis.</strong> Un solo pago (tu equipo) y tienes
-                        Terabytes para siempre. Sin cuotas ocultas.</p>
+                    <p class="pain">Empiezas gratis en Vercel o AWS, pero al crecer pagas por todo. Al año son cientos
+                        de dólares desperdiciados.</p>
+                    <p class="solution"><strong>Deploy Ilimitado.</strong> Monta 10 o 100 contenedores Docker en tu
+                        propio hardware sin pagar un centavo extra.</p>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-icon">🔒</div>
-                        <h3>2. Tus Datos son TU Propiedad</h3>
+                        <h3>2. Tus Datos, Tus Reglas</h3>
                     </div>
-                    <p class="pain">Las grandes empresas escanean tus archivos. Si violas una "regla" oscura, te borran
-                        la cuenta y pierdes todo.</p>
-                    <p class="solution"><strong>Soberanía Digital.</strong> Nadie mira tus archivos. Nadie te puede
-                        borrar. Tú tienes el control físico.</p>
+                    <p class="pain">¿Subes tus bases de datos personales a la nube de otro? Si cambian los TOS, pierdes
+                        tu trabajo.</p>
+                    <p class="solution"><strong>Soberanía Digital.</strong> Tú tienes el control físico del disco. Nadie
+                        apaga tu servidor si no eres tú.</p>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-icon">🚀</div>
-                        <h3>3. Rompe las Cadenas Técnicas</h3>
+                        <h3>3. Sal del 'Tutorial Hell'</h3>
                     </div>
-                    <p class="pain">¿Quieres montar una web o un bot? Los hostings baratos te limitan y los VPS en la
-                        nube son caros.</p>
-                    <p class="solution"><strong>Potencia Real.</strong> Despliega lo que quieras (Docker, Python, Webs)
-                        sin pedir permiso a nadie.</p>
+                    <p class="pain">Copiar código es fácil. Entender dónde corre, asegurar puertos y gestionar redes es
+                        lo que te hace Senior.</p>
+                    <p class="solution"><strong>Skill Real.</strong> Deja de ser un usuario de nubes. Aprende Linux real
+                        montando tu propio laboratorio.</p>
                 </div>
             </div>
         </section>
@@ -659,12 +664,12 @@
         <section class="course-interest">
             <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Trabaja conmigo ahora</h3>
             <p>
-                No esperes a que salga el curso. Si necesitas montar tu infraestructura <strong>ya mismo</strong>,
-                puedo ayudarte personalmente. Ahorra semanas de prueba y error.
+                No pierdas semanas leyendo foros confusos o rompiendo tu configuración. En una sesión intensiva te
+                explico lo que yo tardé años en aprender y dejamos tu servidor listo.
             </p>
             <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20quiero%20agendar%20mi%20asesor%C3%ADa%20para%20VPS"
                 target="_blank" class="btn">
-                👉 Quiero mi VPS ya
+                👉 Quiero mi VPS y Aprender YA
             </a>
 
             <div style="margin-top: 2rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
@@ -676,11 +681,163 @@
             </div>
         </section>
 
+        <section class="course-interest">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">
+            📋 Registro rápido para recibir novedades</h3>
+
+            <div class="card">
+
+
+              <!-- Google Sign-In (rendered by the SDK) -->
+              <div id="google-signin-btn"></div>
+
+              <!-- Status box -->
+              <div class="status" id="statusBox"></div>
+            </div>
+        </section>
+
+<!--         <section class="login-card">
+            <p>📋 Registramiento rápido para recibir novedades</p>
+            <div id="google-signin-btn"></div>
+            <div class="status" id="statusBox"></div>
+        </section> -->
+
         <footer>
             &copy; 2026 Anibal Copitan.
         </footer>
     </main>
 
-</body>
 
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT — Arquitectura limpia (clase + módulos)
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  "use strict";
+
+  // ═══════════════════════════════════════════════════
+  // CONFIG
+  // ═══════════════════════════════════════════════════
+  const CONFIG = {
+    appsScriptUrl: "https://script.google.com/macros/s/YOUR_DEPLOY_ID/exec",
+    googleClientId: "491602852998-op88tt3bc6hhjuu24r45etfek8uuntpv.apps.googleusercontent.com"
+  };
+
+  // ═══════════════════════════════════════════════════
+  // UI
+  // ═══════════════════════════════════════════════════
+  const UI = {
+    statusEl: document.getElementById("statusBox"),
+    show(msg, type) {
+      this.statusEl.className = "status show status--" + type;
+      this.statusEl.innerHTML = msg;
+    }
+  };
+
+  // ═══════════════════════════════════════════════════
+  // POST al Apps Script
+  // ═══════════════════════════════════════════════════
+  async function postToSheet(body) {
+    const res = await fetch(CONFIG.appsScriptUrl, {
+      method:   "POST",
+      headers:  { "Content-Type": "application/json" },
+      body:     JSON.stringify(body),
+      redirect: "follow"
+    });
+    const text = await res.text();
+    return JSON.parse(text); // { status: "ok"|"error", message, data }
+  }
+
+  // ═══════════════════════════════════════════════════
+  // JWT decoder
+  // ═══════════════════════════════════════════════════
+  function decodeJwt(token) {
+    const payload = token.split(".")[1];
+    return JSON.parse(
+      decodeURIComponent(
+        atob(payload)
+          .split("")
+          .map(c => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
+          .join("")
+      )
+    );
+  }
+
+  // ═══════════════════════════════════════════════════
+  // FLUJO PRINCIPAL
+  //
+  //  1. User hace click → Google pide permisos
+  //  2. Google retorna token → extraemos email, nombre
+  //  3. Intentamos LOGIN con email + sub (Google ID)
+  //  4. Si el backend dice "error" → significa que no existe
+  //  5. Entonces hacemos REGISTER
+  //  6. Si register responde "ok" → usuario creado ✅
+  // ═══════════════════════════════════════════════════
+  async function handleGoogleSignIn(response) {
+    const user = decodeJwt(response.credential);
+    // user.email, user.name, user.sub (ID único de Google)
+
+    UI.show("Verificando cuenta…", "loading");
+
+    try {
+      // ── PASO 1: Intentar login ──
+      const loginResult = await postToSheet({
+        op:       "login",
+        email:    user.email,
+        password: user.sub        // usamos el Google ID como password
+      });
+
+      // ── Si el login funciona → ya existe, terminamos ──
+      if (loginResult.status === "ok") {
+        UI.show("¡Bienvenido de vuelta, <strong>" + user.name + "</strong>! ✅", "success");
+        console.log("Login exitoso →", loginResult.data);
+        return;
+      }
+
+      // ── PASO 2: Login fallido → el usuario no existe → registrar ──
+      UI.show("Creando cuenta…", "loading");
+
+      const registerResult = await postToSheet({
+        op:       "register",
+        name:     user.name,
+        email:    user.email,
+        password: user.sub        // mismo Google ID como password
+      });
+
+      if (registerResult.status === "ok") {
+        UI.show("¡Cuenta creada! Bienvenido, <strong>" + user.name + "</strong> ✅", "success");
+        console.log("Register exitoso →", registerResult.data);
+        return;
+      }
+
+      // ── Si register también falla por alguna otra razón ──
+      UI.show(registerResult.message, "error");
+
+    } catch (err) {
+      console.error("Error →", err);
+      UI.show("Error de conexión. Intenta de nuevo.", "error");
+    }
+  }
+
+  // ═══════════════════════════════════════════════════
+  // INIT — Google SDK
+  // ═══════════════════════════════════════════════════
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: CONFIG.googleClientId,
+      callback:  handleGoogleSignIn
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementById("google-signin-btn"),
+      { theme: "outline", size: "large", width: 300, logo_alignment: "center" }
+    );
+  };
+
+})();
+</script>
+
+
+</body>
 </html>
