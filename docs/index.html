@@ -538,12 +538,12 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-icon">🚀</div>
-                        <h3>3. Sal del 'Tutorial Hell'</h3>
+                        <h3>3. Aprendes, pero no sabes por dónde empezar</h3>
                     </div>
-                    <p class="pain">Copiar código es fácil. Entender dónde corre, asegurar puertos y gestionar redes es
-                        lo que te hace Senior.</p>
-                    <p class="solution"><strong>Skill Real.</strong> Deja de ser un usuario de nubes. Aprende Linux real
-                        montando tu propio laboratorio.</p>
+                    <p class="pain">Ves videos y guías, pero al final no sabes cómo montar
+                        tu propio servidor desde cero ni qué pasos seguir.</p>
+                    <p class="solution"><strong>Aquí te guiamos paso a paso</strong>, sin saltos raros,
+                        hasta que tu servidor quede funcionando de verdad.</p>
                 </div>
             </div>
         </section>
@@ -672,31 +672,42 @@
                 👉 Quiero mi VPS y Aprender YA
             </a>
 
-            <div style="margin-top: 2rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-                <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">¿Prefieres aprender a tu ritmo?</p>
-                <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20solo%20av%C3%ADsame%20cuando%20salga%20el%20curso"
-                    target="_blank" style="color: #6b7280; text-decoration: underline; font-size: 0.9rem;">
-                    Avísame cuando el curso esté listo (Lista de espera)
-                </a>
+        </section>
+
+        <section class="course-interest" style="
+        background:#ffffff;
+        border-radius:28px;
+        border:1.5px solid #22c55e;
+        margin-top:3rem;
+    ">
+
+            <div class="card" style="padding: 2rem 1.5rem; text-align: center; background: transparent; border: none;">
+
+                <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem;">
+                    🔔 Curso VPS en Casa
+                </h3>
+
+                <p style="font-size: 1rem; color: #6b7280; margin-bottom: 1.25rem;">
+                    Te avisaré apenas esté disponible.
+                </p>
+
+                <!-- Google Sign-In -->
+                <div style="display: flex; justify-content: center; margin: 1.25rem 0;">
+                    <div id="google-signin-btn"></div>
+                </div>
+
+                <!-- Status -->
+                <div class="status" id="statusBox" style="margin-top: 1rem;"></div>
+
+                <p style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.75rem;">
+                    Registro rápido con Google · Sin spam
+                </p>
+
             </div>
         </section>
 
-        <section class="course-interest">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">
-            📋 Registro rápido para recibir novedades</h3>
 
-            <div class="card">
-
-
-              <!-- Google Sign-In (rendered by the SDK) -->
-              <div id="google-signin-btn"></div>
-
-              <!-- Status box -->
-              <div class="status" id="statusBox"></div>
-            </div>
-        </section>
-
-<!--         <section class="login-card">
+        <!--         <section class="login-card">
             <p>📋 Registramiento rápido para recibir novedades</p>
             <div id="google-signin-btn"></div>
             <div class="status" id="statusBox"></div>
@@ -709,134 +720,142 @@
 
 
 
-<!-- ═══════════════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════════════
      JAVASCRIPT — Arquitectura limpia (clase + módulos)
      ═══════════════════════════════════════════════════════════ -->
-<script>
-(function () {
-  "use strict";
+    <script>
+        (function () {
+            "use strict";
 
-  // ═══════════════════════════════════════════════════
-  // CONFIG
-  // ═══════════════════════════════════════════════════
-  const CONFIG = {
-    appsScriptUrl: "https://script.google.com/macros/s/AKfycbwzIlSIe5RF69-Jb0RAp-UXBmtULKKxG_B-aP0kjNHMpbicIuITzyaK3jB9cygeESsfxQ/exec",
-    googleClientId: "491602852998-op88tt3bc6hhjuu24r45etfek8uuntpv.apps.googleusercontent.com"
-  };
+            // ═══════════════════════════════════════════════════
+            // CONFIG
+            // ═══════════════════════════════════════════════════
+            const CONFIG = {
+                appsScriptUrl: "https://script.google.com/macros/s/AKfycbwzIlSIe5RF69-Jb0RAp-UXBmtULKKxG_B-aP0kjNHMpbicIuITzyaK3jB9cygeESsfxQ/exec",
+                googleClientId: "491602852998-op88tt3bc6hhjuu24r45etfek8uuntpv.apps.googleusercontent.com"
+            };
 
-  // ═══════════════════════════════════════════════════
-  // UI
-  // ═══════════════════════════════════════════════════
-  const UI = {
-    statusEl: document.getElementById("statusBox"),
-    show(msg, type) {
-      this.statusEl.className = "status show status--" + type;
-      this.statusEl.innerHTML = msg;
-    }
-  };
+            // ═══════════════════════════════════════════════════
+            // UI
+            // ═══════════════════════════════════════════════════
+            const UI = {
+                statusEl: document.getElementById("statusBox"),
+                show(msg, type) {
+                    this.statusEl.className = "status show status--" + type;
+                    this.statusEl.innerHTML = msg;
+                }
+            };
 
-  // ═══════════════════════════════════════════════════
-  // POST al Apps Script
-  // ═══════════════════════════════════════════════════
-async function postToSheet(body) {
-  const res = await fetch(CONFIG.appsScriptUrl, {
-    method: "POST",
-    body: new URLSearchParams(body)
-  });
+            // ═══════════════════════════════════════════════════
+            // POST al Apps Script
+            // ═══════════════════════════════════════════════════
+            async function postToSheet(body) {
+                const res = await fetch(CONFIG.appsScriptUrl, {
+                    method: "POST",
+                    body: new URLSearchParams(body)
+                });
 
-  const text = await res.text();
-  return JSON.parse(text);
-}
+                const text = await res.text();
+                return JSON.parse(text);
+            }
 
-  // ═══════════════════════════════════════════════════
-  // JWT decoder
-  // ═══════════════════════════════════════════════════
-  function decodeJwt(token) {
-    const payload = token.split(".")[1];
-    return JSON.parse(
-      decodeURIComponent(
-        atob(payload)
-          .split("")
-          .map(c => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
-          .join("")
-      )
-    );
-  }
+            // ═══════════════════════════════════════════════════
+            // JWT decoder
+            // ═══════════════════════════════════════════════════
+            function decodeJwt(token) {
+                const payload = token.split(".")[1];
+                return JSON.parse(
+                    decodeURIComponent(
+                        atob(payload)
+                            .split("")
+                            .map(c => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
+                            .join("")
+                    )
+                );
+            }
 
-  // ═══════════════════════════════════════════════════
-  // FLUJO PRINCIPAL
-  //
-  //  1. User hace click → Google pide permisos
-  //  2. Google retorna token → extraemos email, nombre
-  //  3. Intentamos LOGIN con email + sub (Google ID)
-  //  4. Si el backend dice "error" → significa que no existe
-  //  5. Entonces hacemos REGISTER
-  //  6. Si register responde "ok" → usuario creado ✅
-  // ═══════════════════════════════════════════════════
-  async function handleGoogleSignIn(response) {
-    const user = decodeJwt(response.credential);
-    // user.email, user.name, user.sub (ID único de Google)
+            // ═══════════════════════════════════════════════════
+            // FLUJO PRINCIPAL
+            //
+            //  1. User hace click → Google pide permisos
+            //  2. Google retorna token → extraemos email, nombre
+            //  3. Intentamos LOGIN con email + sub (Google ID)
+            //  4. Si el backend dice "error" → significa que no existe
+            //  5. Entonces hacemos REGISTER
+            //  6. Si register responde "ok" → usuario creado ✅
+            // ═══════════════════════════════════════════════════
+            async function handleGoogleSignIn(response) {
+                const user = decodeJwt(response.credential);
+                // user.email, user.name, user.sub (ID único de Google)
 
-    UI.show("Verificando cuenta…", "loading");
+                UI.show("Verificando cuenta…", "loading");
 
-    try {
-      // ── PASO 1: Intentar login ──
-      const loginResult = await postToSheet({
-        op:       "login",
-        email:    user.email,
-        password: user.sub        // usamos el Google ID como password
-      });
+                try {
+                    // ── PASO 1: Intentar login ──
+                    const loginResult = await postToSheet({
+                        op: "login",
+                        email: user.email,
+                        password: user.sub        // usamos el Google ID como password
+                    });
 
-      // ── Si el login funciona → ya existe, terminamos ──
-      if (loginResult.status === "ok") {
-        UI.show("<strong>" + user.name.toUpperCase() + "</strong>, ¡Listo te acabamos de registrar ! ✅", "success");
-        console.log("Login exitoso →", loginResult.data);
-        return;
-      }
+                    // ── Si el login funciona → ya existe, terminamos ──
+                    if (loginResult.status === "ok") {
+                        UI.show(
+                            "👀 <strong>" + user.name + "</strong>, ya estabas registrado.<br>Te avisaré apenas lancemos el curso.",
+                            "success"
+                        );
 
-      // ── PASO 2: Login fallido → el usuario no existe → registrar ──
-      UI.show("Creando cuenta…", "loading");
+                        console.log("Login exitoso →", loginResult.data);
+                        return;
+                    }
 
-      const registerResult = await postToSheet({
-        op:       "register",
-        name:     user.name,
-        email:    user.email,
-        password: user.sub        // mismo Google ID como password
-      });
+                    // ── PASO 2: Login fallido → el usuario no existe → registrar ──
+                    UI.show("Creando cuenta…", "loading");
 
-      if (registerResult.status === "ok") {
-        UI.show("¡Cuenta creada! Bienvenido, <strong>" + user.name + "</strong> ✅", "success");
-        console.log("Register exitoso →", registerResult.data);
-        return;
-      }
+                    const registerResult = await postToSheet({
+                        op: "register",
+                        name: user.name,
+                        email: user.email,
+                        password: user.sub        // mismo Google ID como password
+                    });
 
-      // ── Si register también falla por alguna otra razón ──
-      UI.show(registerResult.message, "error");
+                    if (registerResult.status === "ok") {
+                        UI.show(
+                            "✅ <strong>" + user.name + "</strong>, ya estás en la lista de espera.<br>Te avisaré apenas el curso esté disponible.",
+                            "success"
+                        );
+                        console.log("Register exitoso →", registerResult.data);
+                        return;
+                    }
 
-    } catch (err) {
-      console.error("Error →", err);
-      UI.show("Error de conexión. Intenta de nuevo.", "error");
-    }
-  }
+                    // ── Si register también falla por alguna otra razón ──
+                    UI.show(registerResult.message, "error");
 
-  // ═══════════════════════════════════════════════════
-  // INIT — Google SDK
-  // ═══════════════════════════════════════════════════
-  window.onload = function () {
-    google.accounts.id.initialize({
-      client_id: CONFIG.googleClientId,
-      callback:  handleGoogleSignIn
-    });
+                } catch (err) {
+                    console.error("Error →", err);
+                    UI.show("Error de conexión. Intenta de nuevo.", "error");
+                }
+            }
 
-    google.accounts.id.renderButton(
-      document.getElementById("google-signin-btn"),
-      { theme: "outline", size: "large", width: 300, logo_alignment: "center" }
-    );
-  };
+            // ═══════════════════════════════════════════════════
+            // INIT — Google SDK
+            // ═══════════════════════════════════════════════════
+            window.onload = function () {
+                google.accounts.id.initialize({
+                    client_id: CONFIG.googleClientId,
+                    callback: handleGoogleSignIn
+                });
 
-})();
-</script>
+                google.accounts.id.renderButton(
+                    document.getElementById("google-signin-btn"),
+                    { theme: "outline", size: "large", width: 300, logo_alignment: "center" }
+                );
+            };
+
+        })();
+    </script>
 
 
 </body>
+
 </html>
