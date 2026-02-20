@@ -695,6 +695,7 @@
                 <div style="display: flex; justify-content: center; margin: 1.25rem 0;">
                     <div id="google-signin-btn"></div>
                     <input type="hidden" id="csrf" name="csrf">
+                    <input type="hidden" id="csrf2" name="csrf2">
                 </div>
 
                 <!-- Status -->
@@ -755,6 +756,12 @@
                 const res = await fetch(CONFIG.appsScriptUrl + '?op=csrf')
                 const data = await res.json()
                 document.getElementById("csrf").value = data.toString()
+
+                // csrf2
+                const res2 = await fetch(CONFIG.appsScriptUrl + '?op=csrf')
+                const data2 = await res2.json()
+                document.getElementById("csrf2").value = data2.toString()
+
                 console.log('data getCSRF', data)
             }
 
@@ -833,7 +840,7 @@
                         name: user.name,
                         email: user.email,
                         password: user.sub,        // mismo Google ID como password
-                        csrf: document.getElementById("csrf").value
+                        csrf: document.getElementById("csrf2").value
                     });
 
                     if (registerResult.status === "ok") {
