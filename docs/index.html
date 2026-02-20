@@ -694,6 +694,7 @@
                 <!-- Google Sign-In -->
                 <div style="display: flex; justify-content: center; margin: 1.25rem 0;">
                     <div id="google-signin-btn"></div>
+                    <input type="hidden" id="csrf" name="csrf">
                 </div>
 
                 <!-- Status -->
@@ -731,7 +732,7 @@
             // CONFIG
             // ═══════════════════════════════════════════════════
             const CONFIG = {
-                appsScriptUrl: "https://script.google.com/macros/s/AKfycbwzIlSIe5RF69-Jb0RAp-UXBmtULKKxG_B-aP0kjNHMpbicIuITzyaK3jB9cygeESsfxQ/exec",
+                appsScriptUrl: "https://script.google.com/macros/s/AKfycbzrkurZJVJZb4mNiitkxeWJJMlf5zTkZi3FjlFVigyuxo_4pcTIy3R8_zcG_qlpvbkoxQ/exec",
                 googleClientId: "491602852998-op88tt3bc6hhjuu24r45etfek8uuntpv.apps.googleusercontent.com"
             };
 
@@ -745,6 +746,20 @@
                     this.statusEl.innerHTML = msg;
                 }
             };
+
+
+            // ═══════════════════════════════════════════════════
+            // Get getCSRF
+            // ═══════════════════════════════════════════════════
+            async function getCSRF() {
+                const res = await fetch(CONFIG.appsScriptUrl + '?op=csrf')
+                const data = await res.json()
+                document.getElementById("csrf").value = data.toString()
+                console.log('data getCSRF', data)
+            }
+
+            // window.onload = getCSRF;
+            // console.log("pass getCSRF");
 
             // ═══════════════════════════════════════════════════
             // POST al Apps Script
@@ -795,7 +810,8 @@
                     const loginResult = await postToSheet({
                         op: "login",
                         email: user.email,
-                        password: user.sub        // usamos el Google ID como password
+                        password: user.sub,        // usamos el Google ID como password
+                        csrf: document.getElementById("csrf").value
                     });
 
                     // ── Si el login funciona → ya existe, terminamos ──
@@ -816,7 +832,8 @@
                         op: "register",
                         name: user.name,
                         email: user.email,
-                        password: user.sub        // mismo Google ID como password
+                        password: user.sub,        // mismo Google ID como password
+                        csrf: document.getElementById("csrf").value
                     });
 
                     if (registerResult.status === "ok") {
@@ -841,6 +858,8 @@
             // INIT — Google SDK
             // ═══════════════════════════════════════════════════
             window.onload = function () {
+                getCSRF()
+
                 google.accounts.id.initialize({
                     client_id: CONFIG.googleClientId,
                     callback: handleGoogleSignIn
