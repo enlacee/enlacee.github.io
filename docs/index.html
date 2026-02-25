@@ -462,10 +462,10 @@
         .google-btn-wrapper {
             position: relative;
             width: 100%;
-            max-width: 360px;
-            height: 56px;
+            max-width: 350px;
+            height: 50px;
             margin: 0 auto;
-            border-radius: 999px;
+            border-radius: 5px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -504,10 +504,368 @@
             /* Invisible but clickable */
             z-index: 10;
         }
+
+       /* --- New Header & Modal Styles --- */
+        .app-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1000;
+        }
+
+
+
+        .btn-login-header {
+            background: var(--text);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-login-header:hover {
+            opacity: 0.9;
+        }
+
+        .header-auth-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-account-header {
+            background: var(--green);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-account-header:hover {
+            opacity: 0.9;
+        }
+
+        .user-email-header {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            max-width: 180px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Menú usuario (igual que account.html): trigger + dropdown con Cerrar sesión */
+        .header-auth-wrap .user-menu {
+            position: relative;
+        }
+
+        .header-auth-wrap .user-menu-trigger {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: #f9fafb;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .header-auth-wrap .user-menu-trigger:hover {
+            background: #f3f4f6;
+        }
+
+        .header-auth-wrap .user-menu-trigger .avatar-placeholder {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green) 0%, #16a34a 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .header-auth-wrap .user-menu-trigger .chevron {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        .header-auth-wrap .user-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.25rem;
+            min-width: 200px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            padding: 0.5rem;
+            display: none;
+            z-index: 200;
+        }
+
+        .header-auth-wrap .user-dropdown.open {
+            display: block;
+        }
+
+        .header-auth-wrap .user-dropdown-email {
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
+            word-break: break-all;
+        }
+
+        .header-auth-wrap .user-dropdown button {
+            width: 100%;
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text);
+            border-radius: 8px;
+        }
+
+        .header-auth-wrap .user-dropdown button:hover {
+            background: #f3f4f6;
+        }
+
+        .header-auth-wrap .user-dropdown .logout {
+            color: #dc2626;
+        }
+
+        .login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .login-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            width: 90%;
+            max-width: 400px;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .login-modal.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #9ca3af;
+            transition: all 0.2s;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            background: #f3f4f6;
+            color: var(--text);
+        }
+
+        .modal-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .modal-subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .google-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Adjusting main container for fixed header */
+        .container {
+            padding-top: 2rem;
+        }
+
+        /* Status box: loading, success, error — UX claro */
+        .status {
+            min-height: 0;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .status.show {
+            opacity: 1;
+            visibility: visible;
+            min-height: 2.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .status--loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .status--loading .status-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top-color: var(--green);
+            border-radius: 50%;
+            animation: status-spin 0.7s linear infinite;
+        }
+
+        .status--loading .status-dots::after,
+        .status-in-modal .status-dots::after {
+            content: "";
+            animation: status-dots 1.2s steps(4, end) infinite;
+        }
+
+        @keyframes status-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes status-dots {
+            0%, 20% { content: "."; }
+            40% { content: ".."; }
+            60%, 100% { content: "..."; }
+        }
+
+        .status--success {
+            color: var(--green);
+            font-weight: 500;
+        }
+
+        .status--success a {
+            color: var(--green);
+        }
+
+        .status--error {
+            color: #dc2626;
+            font-weight: 500;
+        }
+
+        /* Mismo bloque de loading dentro del modal */
+        .status-in-modal {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: #f9fafb;
+            border: 1px solid var(--border);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .status-in-modal.show {
+            display: flex;
+        }
+
+        .status-in-modal .status-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top-color: var(--green);
+            border-radius: 50%;
+            animation: status-spin 0.7s linear infinite;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- HEADER: "Iniciar Sesión" o "Mi cuenta" + email según sesión -->
+    <header class="app-header">
+        <div id="header-auth-wrap" class="header-auth-wrap">
+            <button class="btn-login-header" id="header-login-btn">Iniciar Sesión</button>
+        </div>
+    </header>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="login-modal">
+        <div class="modal-card">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <h3 class="modal-title">Iniciar Sesión</h3>
+            <p class="modal-subtitle">Accede para ver contenido exclusivo y seguir tu progreso.</p>
+
+            <div class="google-btn-container">
+                <div id="modal-google-btn"></div>
+            </div>
+
+            <div id="modal-status" class="status-in-modal" aria-live="polite">
+                <span class="status-spinner" aria-hidden="true"></span>
+                <span class="status-in-modal-text"></span>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #9ca3af;">
+                Al continuar, aceptas nuestros términos y condiciones.
+            </p>
+        </div>
+    </div>
 
     <main class="container">
         <!-- HERO -->
@@ -790,6 +1148,9 @@
     <!-- ═══════════════════════════════════════════════════════════
      JAVASCRIPT — Arquitectura limpia (clase + módulos)
      ═══════════════════════════════════════════════════════════ -->
+    <script src="session.js"></script>
+    <script src="auth.js"></script>
+
     <script>
         (function () {
             "use strict";
@@ -802,16 +1163,97 @@
                 googleClientId: "491602852998-op88tt3bc6hhjuu24r45etfek8uuntpv.apps.googleusercontent.com"
             };
 
+            function initial(str) {
+                if (!str) return "?";
+                var parts = String(str).trim().split(/\s+/);
+                if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+                return String(str)[0].toUpperCase();
+            }
+
+            function updateHeaderForSession() {
+                var wrap = document.getElementById("header-auth-wrap");
+                if (!wrap) return;
+                var session = window.getSession && window.getSession();
+                if (session && session.email) {
+                    var email = session.email;
+                    var initialLetter = initial(session.name || email);
+                    wrap.innerHTML =
+                        "<a href=\"account.html\" class=\"btn-account-header\">Mi cuenta</a>" +
+                        "<div class=\"user-menu\">" +
+                        "<button type=\"button\" class=\"user-menu-trigger\" id=\"header-user-trigger\" aria-expanded=\"false\" aria-haspopup=\"true\">" +
+                        "<span class=\"avatar-placeholder\">" + escapeHtml(initialLetter) + "</span>" +
+                        "<span class=\"user-email-header\">" + escapeHtml(email) + "</span>" +
+                        "<span class=\"chevron\" aria-hidden=\"true\">▾</span>" +
+                        "</button>" +
+                        "<div class=\"user-dropdown\" id=\"header-user-dropdown\" role=\"menu\">" +
+                        "<div class=\"user-dropdown-email\">" + escapeHtml(email) + "</div>" +
+                        "<button type=\"button\" class=\"logout\" role=\"menuitem\" id=\"header-logout-btn\">Cerrar sesión</button>" +
+                        "</div>" +
+                        "</div>";
+                    var trigger = document.getElementById("header-user-trigger");
+                    var dropdown = document.getElementById("header-user-dropdown");
+                    var logoutBtn = document.getElementById("header-logout-btn");
+                    if (trigger && dropdown) {
+                        trigger.addEventListener("click", function (e) {
+                            e.stopPropagation();
+                            var isOpen = dropdown.classList.toggle("open");
+                            trigger.setAttribute("aria-expanded", isOpen);
+                        });
+                        document.addEventListener("click", function () {
+                            dropdown.classList.remove("open");
+                            trigger.setAttribute("aria-expanded", "false");
+                        });
+                    }
+                    if (logoutBtn) {
+                        logoutBtn.addEventListener("click", function () {
+                            if (window.clearSession) window.clearSession();
+                            window.location.href = "index.html";
+                        });
+                    }
+                }
+            }
+
             // ═══════════════════════════════════════════════════
             // UI
             // ═══════════════════════════════════════════════════
             const UI = {
                 statusEl: document.getElementById("statusBox"),
+                modalStatusEl: document.getElementById("modal-status"),
+
                 show(msg, type) {
+                    if (!this.statusEl) return;
                     this.statusEl.className = "status show status--" + type;
-                    this.statusEl.innerHTML = msg;
+
+                    if (type === "loading") {
+                        var text = (msg || "").replace(/…?\s*$/, "").trim() || "Cargando";
+                        this.statusEl.innerHTML =
+                            "<span class=\"status-spinner\" aria-hidden=\"true\"></span> " +
+                            "<span>" + escapeHtml(text) + "<span class=\"status-dots\"></span></span>";
+                    } else {
+                        this.statusEl.innerHTML = msg;
+                    }
+
+                    var modalOpen = document.getElementById("login-modal") &&
+                        document.getElementById("login-modal").classList.contains("active");
+                    if (this.modalStatusEl) {
+                        if (type === "loading" && modalOpen) {
+                            var textModal = (msg || "").replace(/…?\s*$/, "").trim() || "Cargando";
+                            this.modalStatusEl.innerHTML =
+                                "<span class=\"status-spinner\" aria-hidden=\"true\"></span> " +
+                                "<span class=\"status-in-modal-text\">" + escapeHtml(textModal) + " <span class=\"status-dots\"></span></span>";
+                            this.modalStatusEl.classList.add("show");
+                        } else {
+                            this.modalStatusEl.classList.remove("show");
+                        }
+                    }
                 }
             };
+
+            function escapeHtml(s) {
+                var div = document.createElement("div");
+                div.textContent = s;
+                return div.innerHTML;
+            }
 
             // ═══════════════════════════════════════════════════
             // Get getCSRF
@@ -872,7 +1314,8 @@
             // ═══════════════════════════════════════════════════
             async function handleGoogleSignIn(response) {
                 const user = decodeJwt(response.credential);
-                // user.email, user.name, user.sub (ID único de Google)
+                // Si el modal está abierto = usuario entró por "Iniciar Sesión" → redirigir a account. Si no = botón "Avisarme con mi Gmail" → quedarse y mostrar mensaje.
+                var fromModal = document.getElementById("login-modal") && document.getElementById("login-modal").classList.contains("active");
 
                 UI.show("Verificando cuenta…", "loading");
 
@@ -885,14 +1328,19 @@
                         csrf: document.getElementById("csrf").value
                     });
 
-                    // ── Si el login funciona → ya existe, terminamos ──
+                    // ── Si el login funciona ──
                     if (loginResult.status === "ok") {
+                        if (window.closeLoginModal) window.closeLoginModal();
+                        if (window.setSession) window.setSession({ email: user.email, name: user.name });
+                        if (fromModal) {
+                            window.location.href = "account.html";
+                            return;
+                        }
                         UI.show(
                             "👀 <strong>" + user.name + "</strong>, ya estabas registrado.<br>Te avisaré apenas lancemos el curso.",
                             "success"
                         );
-
-                        console.log("Login exitoso →", loginResult.data);
+                        updateHeaderForSession();
                         return;
                     }
 
@@ -908,11 +1356,17 @@
                     });
 
                     if (registerResult.status === "ok") {
+                        if (window.closeLoginModal) window.closeLoginModal();
+                        if (window.setSession) window.setSession({ email: user.email, name: user.name });
+                        if (fromModal) {
+                            window.location.href = "account.html";
+                            return;
+                        }
                         UI.show(
                             "✅ <strong>" + user.name + "</strong>, ya estás en la lista de espera.<br>Te avisaré apenas el curso esté disponible.",
                             "success"
                         );
-                        console.log("Register exitoso →", registerResult.data);
+                        updateHeaderForSession();
                         return;
                     }
 
@@ -929,7 +1383,8 @@
             // INIT — Google SDK
             // ═══════════════════════════════════════════════════
             window.onload = function () {
-                getCSRF()
+                updateHeaderForSession();
+                getCSRF();
 
                 google.accounts.id.initialize({
                     client_id: CONFIG.googleClientId,
@@ -941,6 +1396,12 @@
                     { theme: "outline", size: "large", width: 300, logo_alignment: "center", text: "signin_with" }
                 );
             };
+
+
+            // Let auth.js render its button
+            if (typeof window.renderModalAuth === 'function') {
+                window.renderModalAuth();
+            }
 
         })();
     </script>
