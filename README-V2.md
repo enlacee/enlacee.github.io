@@ -1,6 +1,5 @@
 # Digital Product
 
-
 Simple create simple server with python 
 App web + Google Login = Ok Work
 
