@@ -19,7 +19,9 @@
             --border: #e5e7eb;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -102,7 +104,7 @@
             background: white;
             border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
             padding: 0.5rem;
             display: none;
             z-index: 200;
@@ -160,19 +162,20 @@
         }
 
         .user-card {
-            background: #f9fafb;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.25rem 1.5rem;
+            border-radius: 20px;
+            padding: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.25rem;
             margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .user-card .avatar-placeholder {
-            width: 48px;
-            height: 48px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--green) 0%, #16a34a 100%);
             color: white;
@@ -180,22 +183,159 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
         }
 
-        .user-card .email {
+        .user-info-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-info-text .user-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .user-info-text .user-email {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .subscription-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.75rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .subscription-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscription-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .subscription-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .status-badge.active {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-badge.inactive {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .status-badge.active .status-dot {
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(22, 101, 52, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(22, 101, 52, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(22, 101, 52, 0);
+            }
+        }
+
+        .sub-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            font-size: 1rem;
             font-weight: 600;
             color: var(--text);
-            word-break: break-all;
+        }
+
+        .sub-footer {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wa-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .wa-link:hover {
+            text-decoration: underline;
         }
 
         .empty-state {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1.5rem;
             background: #f9fafb;
-            border-radius: 16px;
-            border: 1px dashed var(--border);
+            border-radius: 20px;
+            border: 2px dashed var(--border);
         }
 
         .empty-state p {
@@ -239,7 +379,8 @@
     <header class="app-header">
         <a href="index.html" class="header-home">Inicio</a>
         <div class="user-menu">
-            <button type="button" class="user-menu-trigger" id="user-menu-trigger" aria-expanded="false" aria-haspopup="true">
+            <button type="button" class="user-menu-trigger" id="user-menu-trigger" aria-expanded="false"
+                aria-haspopup="true">
                 <span class="avatar-placeholder" id="user-initial">👤</span>
                 <span id="user-email-header"></span>
                 <span class="chevron" aria-hidden="true">▾</span>
@@ -257,12 +398,41 @@
 
         <div class="user-card">
             <span class="avatar-placeholder" id="user-initial-card">👤</span>
-            <span class="email" id="user-email-card"></span>
+            <div class="user-info-text">
+                <p class="user-name" id="user-name-card"></p>
+                <p class="user-email" id="user-email-card"></p>
+            </div>
         </div>
 
-        <div class="empty-state">
-            <p class="highlight">Aún no tienes cursos habilitados.</p>
-            <p>Si ya pagaste, espera a que lo active por WhatsApp.</p>
+        <div class="subscription-card">
+            <div class="subscription-header">
+                <h3 class="subscription-title">Mi Suscripción</h3>
+                <div id="sub-status-badge"></div>
+            </div>
+
+            <div class="sub-details">
+                <div class="detail-item">
+                    <span class="detail-label">Plan Actual</span>
+                    <span class="detail-value" id="sub-plan-name">-</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Vencimiento</span>
+                    <span class="detail-value" id="sub-expire-date">-</span>
+                </div>
+            </div>
+
+            <div class="sub-footer">
+                <span id="sub-footer-text" style="font-size: 0.85rem; color: var(--text-light);"></span>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20tengo%20una%20duda%20con%20mi%20suscripci%C3%B3n"
+                    target="_blank" class="wa-link">
+                    Contactar soporte
+                </a>
+            </div>
+        </div>
+
+        <div class="empty-state" id="empty-state-courses">
+            <p class="highlight" id="empty-state-title">Aún no tienes cursos habilitados.</p>
+            <p id="empty-state-desc">Si ya pagaste, espera a que lo active por WhatsApp.</p>
         </div>
 
         <h2 class="courses-section-title">Mis cursos</h2>
@@ -306,9 +476,44 @@
 
             document.getElementById("user-email-header").textContent = email;
             document.getElementById("user-email-card").textContent = email;
+            document.getElementById("user-name-card").textContent = name;
             document.getElementById("user-dropdown-email").textContent = email;
             document.getElementById("user-initial").textContent = initialLetter;
             document.getElementById("user-initial-card").textContent = initialLetter;
+
+            // --- Lógica de Suscripción ---
+            var isActive = window.isSubscriptionActive && window.isSubscriptionActive();
+            var badgeEl = document.getElementById("sub-status-badge");
+            var planEl = document.getElementById("sub-plan-name");
+            var expireEl = document.getElementById("sub-expire-date");
+            var footerText = document.getElementById("sub-footer-text");
+            var emptyTitle = document.getElementById("empty-state-title");
+            var emptyDesc = document.getElementById("empty-state-desc");
+
+            if (isActive) {
+                badgeEl.innerHTML = '<span class="status-badge active"><span class="status-dot"></span>Activa</span>';
+                planEl.textContent = (session.subscriptionPlan == 1) ? "Premium Access" : "Plan Estándar";
+
+                // Calcular fecha de fin
+                var rawDate = session.subscriptionStartDate;
+                var start = rawDate.includes("T") ? new Date(rawDate) : new Date(rawDate.replace(/-/g, "/"));
+                var end = new Date(start);
+                end.setDate(start.getDate() + parseInt(session.subscriptionDurationDays));
+
+                expireEl.textContent = end.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+                footerText.textContent = "¡Gracias por confiar en el proyecto!";
+
+                emptyTitle.textContent = "Próximamente verás tus cursos aquí.";
+                emptyDesc.textContent = "Estamos configurando tu acceso personalizado.";
+            } else {
+                badgeEl.innerHTML = '<span class="status-badge inactive"><span class="status-dot"></span>Inactiva</span>';
+                planEl.textContent = "Ninguno";
+                expireEl.textContent = "N/A";
+                footerText.textContent = "Suscríbete para acceder a todo el contenido.";
+
+                emptyTitle.textContent = "Suscripción Pendiente";
+                emptyDesc.textContent = "Tu cuenta está creada pero aún no tienes una suscripción activa.";
+            }
 
             var trigger = document.getElementById("user-menu-trigger");
             var dropdown = document.getElementById("user-dropdown");

@@ -21,7 +21,7 @@
     <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
 
     <!-- Google Identity Services SDK -->
-    <script src="https://accounts.google.com/gsi/client?hl=es" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
     <!-- Fonts -->
@@ -458,53 +458,6 @@
             margin-bottom: 0;
         }
 
-        /* Fixed Google Sign-In Button Styles */
-        .google-btn-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 350px;
-            height: 50px;
-            margin: 0 auto;
-            border-radius: 5px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-
-        .google-btn-wrapper:hover {
-            background: #fdfdfd;
-            border-color: #d1d5db;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transform: translateY(-1px);
-        }
-
-        .google-btn-content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-            color: #3c4043;
-            font-size: 1.05rem;
-            letter-spacing: -0.01em;
-        }
-
-        #google-signin-btn-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.01;
-            /* Invisible but clickable */
-            z-index: 10;
-        }
-
         /* --- New Header & Modal Styles --- */
         .app-header {
             display: flex;
@@ -532,124 +485,6 @@
 
         .btn-login-header:hover {
             opacity: 0.9;
-        }
-
-        .header-auth-wrap {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .btn-account-header {
-            background: var(--green);
-            color: white;
-            padding: 0.6rem 1.25rem;
-            border-radius: 999px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .btn-account-header:hover {
-            opacity: 0.9;
-        }
-
-        .user-email-header {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            max-width: 180px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        /* Menú usuario (igual que account.html): trigger + dropdown con Cerrar sesión */
-        .header-auth-wrap .user-menu {
-            position: relative;
-        }
-
-        .header-auth-wrap .user-menu-trigger {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.75rem;
-            background: #f9fafb;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        .header-auth-wrap .user-menu-trigger:hover {
-            background: #f3f4f6;
-        }
-
-        .header-auth-wrap .user-menu-trigger .avatar-placeholder {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--green) 0%, #16a34a 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-
-        .header-auth-wrap .user-menu-trigger .chevron {
-            font-size: 0.7rem;
-            color: var(--text-light);
-        }
-
-        .header-auth-wrap .user-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 0.25rem;
-            min-width: 200px;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            padding: 0.5rem;
-            display: none;
-            z-index: 200;
-        }
-
-        .header-auth-wrap .user-dropdown.open {
-            display: block;
-        }
-
-        .header-auth-wrap .user-dropdown-email {
-            padding: 0.75rem;
-            font-size: 0.875rem;
-            color: var(--text-light);
-            border-bottom: 1px solid var(--border);
-            word-break: break-all;
-        }
-
-        .header-auth-wrap .user-dropdown button {
-            width: 100%;
-            padding: 0.6rem 0.75rem;
-            text-align: left;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: var(--text);
-            border-radius: 8px;
-        }
-
-        .header-auth-wrap .user-dropdown button:hover {
-            background: #f3f4f6;
-        }
-
-        .header-auth-wrap .user-dropdown .logout {
-            color: #dc2626;
         }
 
         .login-modal {
@@ -738,124 +573,14 @@
         .container {
             padding-top: 2rem;
         }
-
-        /* Status box: loading, success, error — UX claro */
-        .status {
-            min-height: 0;
-            padding: 0;
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.25s ease, visibility 0.25s ease;
-        }
-
-        .status.show {
-            opacity: 1;
-            visibility: visible;
-            min-height: 2.5rem;
-            padding: 0.5rem 0;
-        }
-
-        .status--loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .status--loading .status-spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--border);
-            border-top-color: var(--green);
-            border-radius: 50%;
-            animation: status-spin 0.7s linear infinite;
-        }
-
-        .status--loading .status-dots::after,
-        .status-in-modal .status-dots::after {
-            content: "";
-            animation: status-dots 1.2s steps(4, end) infinite;
-        }
-
-        @keyframes status-spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes status-dots {
-
-            0%,
-            20% {
-                content: ".";
-            }
-
-            40% {
-                content: "..";
-            }
-
-            60%,
-            100% {
-                content: "...";
-            }
-        }
-
-        .status--success {
-            color: var(--green);
-            font-weight: 500;
-        }
-
-        .status--success a {
-            color: var(--green);
-        }
-
-        .status--error {
-            color: #dc2626;
-            font-weight: 500;
-        }
-
-        /* Mismo bloque de loading dentro del modal */
-        .status-in-modal {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 10px;
-            background: #f9fafb;
-            border: 1px solid var(--border);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-
-        .status-in-modal.show {
-            display: flex;
-        }
-
-        .status-in-modal .status-spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--border);
-            border-top-color: var(--green);
-            border-radius: 50%;
-            animation: status-spin 0.7s linear infinite;
-            flex-shrink: 0;
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- HEADER: "Iniciar Sesión" o "Mi cuenta" + email según sesión -->
+    <!-- HEADER -->
     <header class="app-header">
-        <div id="header-auth-wrap" class="header-auth-wrap">
-            <button class="btn-login-header" id="header-login-btn">Iniciar Sesión</button>
-        </div>
+        <button class="btn-login-header" id="header-login-btn">Iniciar Sesión</button>
     </header>
 
     <!-- LOGIN MODAL -->
@@ -867,11 +592,6 @@
 
             <div class="google-btn-container">
                 <div id="modal-google-btn"></div>
-            </div>
-
-            <div id="modal-status" class="status-in-modal" aria-live="polite">
-                <span class="status-spinner" aria-hidden="true"></span>
-                <span class="status-in-modal-text"></span>
             </div>
 
             <p style="font-size: 0.85rem; color: #9ca3af;">
@@ -1111,26 +831,7 @@
 
                 <!-- Google Sign-In -->
                 <div style="display: flex; justify-content: center; margin: 1.25rem 0;">
-                    <div class="google-btn-wrapper">
-                        <div class="google-btn-content">
-                            <svg width="20" height="20" viewBox="0 0 24 24">
-                                <path
-                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                                    fill="#4285F4" />
-                                <path
-                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                                    fill="#34A853" />
-                                <path
-                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                                    fill="#FBBC05" />
-                                <path
-                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                                    fill="#EA4335" />
-                            </svg>
-                            Avisarme con mi Gmail
-                        </div>
-                        <div id="google-signin-btn-overlay"></div>
-                    </div>
+                    <div id="google-signin-btn"></div>
                     <input type="hidden" id="csrf" name="csrf">
                     <input type="hidden" id="csrf2" name="csrf2">
                 </div>
@@ -1158,10 +859,11 @@
     </main>
 
 
+
     <!-- ═══════════════════════════════════════════════════════════
      JAVASCRIPT — Arquitectura limpia (clase + módulos)
      ═══════════════════════════════════════════════════════════ -->
-    <script src="session.js"></script>
+    <!-- External Auth Logic -->
     <script src="auth.js"></script>
 
     <script>
@@ -1176,133 +878,41 @@
                 googleClientId: "491602852998-op88tt3bc6hhjuu24r45etfek8uuntpv.apps.googleusercontent.com"
             };
 
-            function initial(str) {
-                if (!str) return "?";
-                var parts = String(str).trim().split(/\s+/);
-                if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
-                return String(str)[0].toUpperCase();
-            }
-
-            function updateHeaderForSession() {
-                var wrap = document.getElementById("header-auth-wrap");
-                if (!wrap) return;
-                var session = window.getSession && window.getSession();
-                if (session && session.email) {
-                    var email = session.email;
-                    var initialLetter = initial(session.name || email);
-                    wrap.innerHTML =
-                        "<a href=\"account.html\" class=\"btn-account-header\">Mi cuenta</a>" +
-                        "<div class=\"user-menu\">" +
-                        "<button type=\"button\" class=\"user-menu-trigger\" id=\"header-user-trigger\" aria-expanded=\"false\" aria-haspopup=\"true\">" +
-                        "<span class=\"avatar-placeholder\">" + escapeHtml(initialLetter) + "</span>" +
-                        "<span class=\"user-email-header\">" + escapeHtml(email) + "</span>" +
-                        "<span class=\"chevron\" aria-hidden=\"true\">▾</span>" +
-                        "</button>" +
-                        "<div class=\"user-dropdown\" id=\"header-user-dropdown\" role=\"menu\">" +
-                        "<div class=\"user-dropdown-email\">" + escapeHtml(email) + "</div>" +
-                        "<button type=\"button\" class=\"logout\" role=\"menuitem\" id=\"header-logout-btn\">Cerrar sesión</button>" +
-                        "</div>" +
-                        "</div>";
-                    var trigger = document.getElementById("header-user-trigger");
-                    var dropdown = document.getElementById("header-user-dropdown");
-                    var logoutBtn = document.getElementById("header-logout-btn");
-                    if (trigger && dropdown) {
-                        trigger.addEventListener("click", function (e) {
-                            e.stopPropagation();
-                            var isOpen = dropdown.classList.toggle("open");
-                            trigger.setAttribute("aria-expanded", isOpen);
-                        });
-                        document.addEventListener("click", function () {
-                            dropdown.classList.remove("open");
-                            trigger.setAttribute("aria-expanded", "false");
-                        });
-                    }
-                    if (logoutBtn) {
-                        logoutBtn.addEventListener("click", function () {
-                            if (window.clearSession) window.clearSession();
-                            window.location.href = "index.html";
-                        });
-                    }
-                }
-            }
-
             // ═══════════════════════════════════════════════════
-            // UI
+            // UI - Course Section Only
             // ═══════════════════════════════════════════════════
             const UI = {
                 statusEl: document.getElementById("statusBox"),
-                modalStatusEl: document.getElementById("modal-status"),
-
                 show(msg, type) {
                     if (!this.statusEl) return;
                     this.statusEl.className = "status show status--" + type;
-
-                    if (type === "loading") {
-                        var text = (msg || "").replace(/…?\s*$/, "").trim() || "Cargando";
-                        this.statusEl.innerHTML =
-                            "<span class=\"status-spinner\" aria-hidden=\"true\"></span> " +
-                            "<span>" + escapeHtml(text) + "<span class=\"status-dots\"></span></span>";
-                    } else {
-                        this.statusEl.innerHTML = msg;
-                    }
-
-                    var modalOpen = document.getElementById("login-modal") &&
-                        document.getElementById("login-modal").classList.contains("active");
-                    if (this.modalStatusEl) {
-                        if (type === "loading" && modalOpen) {
-                            var textModal = (msg || "").replace(/…?\s*$/, "").trim() || "Cargando";
-                            this.modalStatusEl.innerHTML =
-                                "<span class=\"status-spinner\" aria-hidden=\"true\"></span> " +
-                                "<span class=\"status-in-modal-text\">" + escapeHtml(textModal) + " <span class=\"status-dots\"></span></span>";
-                            this.modalStatusEl.classList.add("show");
-                        } else {
-                            this.modalStatusEl.classList.remove("show");
-                        }
-                    }
+                    this.statusEl.innerHTML = msg;
                 }
             };
 
-            function escapeHtml(s) {
-                var div = document.createElement("div");
-                div.textContent = s;
-                return div.innerHTML;
-            }
-
-            // ═══════════════════════════════════════════════════
-            // Get getCSRF
-            // ═══════════════════════════════════════════════════
             async function getCSRF() {
-                const res = await fetch(CONFIG.appsScriptUrl + '?op=csrf')
-                const data = await res.json()
-                document.getElementById("csrf").value = data.toString()
+                try {
+                    const res = await fetch(CONFIG.appsScriptUrl + '?op=csrf');
+                    const data = await res.json();
+                    const csrf1 = document.getElementById("csrf");
+                    if (csrf1) csrf1.value = data.toString();
 
-                // csrf2
-                const res2 = await fetch(CONFIG.appsScriptUrl + '?op=csrf')
-                const data2 = await res2.json()
-                document.getElementById("csrf2").value = data2.toString()
-
-                console.log('data getCSRF', data)
+                    const res2 = await fetch(CONFIG.appsScriptUrl + '?op=csrf');
+                    const data2 = await res2.json();
+                    const csrf2 = document.getElementById("csrf2");
+                    if (csrf2) csrf2.value = data2.toString();
+                } catch (e) { console.error("CSRF Error", e); }
             }
 
-            // window.onload = getCSRF;
-            // console.log("pass getCSRF");
-
-            // ═══════════════════════════════════════════════════
-            // POST al Apps Script
-            // ═══════════════════════════════════════════════════
             async function postToSheet(body) {
                 const res = await fetch(CONFIG.appsScriptUrl, {
                     method: "POST",
                     body: new URLSearchParams(body)
                 });
-
                 const text = await res.text();
                 return JSON.parse(text);
             }
 
-            // ═══════════════════════════════════════════════════
-            // JWT decoder
-            // ═══════════════════════════════════════════════════
             function decodeJwt(token) {
                 const payload = token.split(".")[1];
                 return JSON.parse(
@@ -1316,76 +926,61 @@
             }
 
             // ═══════════════════════════════════════════════════
-            // FLUJO PRINCIPAL
-            //
-            //  1. User hace click → Google pide permisos
-            //  2. Google retorna token → extraemos email, nombre
-            //  3. Intentamos LOGIN con email + sub (Google ID)
-            //  4. Si el backend dice "error" → significa que no existe
-            //  5. Entonces hacemos REGISTER
-            //  6. Si register responde "ok" → usuario creado ✅
+            // GLOBAL DISPATCHER
             // ═══════════════════════════════════════════════════
-            async function handleGoogleSignIn(response) {
-                const user = decodeJwt(response.credential);
-                // Si el modal está abierto = usuario entró por "Iniciar Sesión" → redirigir a account. Si no = botón "Avisarme con mi Gmail" → quedarse y mostrar mensaje.
-                var fromModal = document.getElementById("login-modal") && document.getElementById("login-modal").classList.contains("active");
+            async function handleGlobalSignIn(response) {
+                // If the modal login was active, delegate to auth.js
+                if (window.activeAuthContext === 'modal') {
+                    if (typeof window.handleModalSignIn === 'function') {
+                        window.handleModalSignIn(response);
+                    }
+                    return;
+                }
 
+                // Otherwise, handle as Course Section Login (Backend)
+                await handleCourseSignIn(response);
+            }
+
+            // ═══════════════════════════════════════════════════
+            // COURSE SECTION LOGIC (BACKEND)
+            // ═══════════════════════════════════════════════════
+            async function handleCourseSignIn(response) {
+                const user = decodeJwt(response.credential);
                 UI.show("Verificando cuenta…", "loading");
 
                 try {
-                    // ── PASO 1: Intentar login ──
                     const loginResult = await postToSheet({
                         op: "login",
                         email: user.email,
-                        password: user.sub,        // usamos el Google ID como password
-                        csrf: document.getElementById("csrf").value
+                        password: user.sub,
+                        csrf: document.getElementById("csrf")?.value
                     });
 
-                    // ── Si el login funciona ──
                     if (loginResult.status === "ok") {
-                        if (window.closeLoginModal) window.closeLoginModal();
-                        if (window.setSession) window.setSession(loginResult.data);
-                        if (fromModal) {
-                            window.location.href = "account.html";
-                            return;
-                        }
                         UI.show(
                             "👀 <strong>" + user.name + "</strong>, ya estabas registrado.<br>Te avisaré apenas lancemos el curso.",
                             "success"
                         );
-                        updateHeaderForSession();
                         return;
                     }
 
-                    // ── PASO 2: Login fallido → el usuario no existe → registrar ──
                     UI.show("Creando cuenta…", "loading");
-
                     const registerResult = await postToSheet({
                         op: "register",
                         name: user.name,
                         email: user.email,
-                        password: user.sub,        // mismo Google ID como password
-                        csrf: document.getElementById("csrf2").value
+                        password: user.sub,
+                        csrf: document.getElementById("csrf2")?.value
                     });
 
                     if (registerResult.status === "ok") {
-                        if (window.closeLoginModal) window.closeLoginModal();
-                        if (window.setSession) window.setSession(registerResult.data);
-                        if (fromModal) {
-                            window.location.href = "account.html";
-                            return;
-                        }
                         UI.show(
                             "✅ <strong>" + user.name + "</strong>, ya estás en la lista de espera.<br>Te avisaré apenas el curso esté disponible.",
                             "success"
                         );
-                        updateHeaderForSession();
                         return;
                     }
-
-                    // ── Si register también falla por alguna otra razón ──
                     UI.show(registerResult.message, "error");
-
                 } catch (err) {
                     console.error("Error →", err);
                     UI.show("Error de conexión. Intenta de nuevo.", "error");
@@ -1393,31 +988,35 @@
             }
 
             // ═══════════════════════════════════════════════════
-            // INIT — Google SDK
+            // INIT
             // ═══════════════════════════════════════════════════
-            window.onload = function () {
-                updateHeaderForSession();
+            window.addEventListener('load', function () {
                 getCSRF();
 
-                if (typeof google !== 'undefined' && google.accounts && google.accounts.id) {
-                    google.accounts.id.initialize({
-                        client_id: CONFIG.googleClientId,
-                        callback: handleGoogleSignIn
-                    });
+                google.accounts.id.initialize({
+                    client_id: CONFIG.googleClientId,
+                    callback: handleGlobalSignIn
+                });
 
-                    // Render both buttons within onload after initialization
+                // Render Course Button
+                const courseBtn = document.getElementById("google-signin-btn");
+                if (courseBtn) {
                     google.accounts.id.renderButton(
-                        document.getElementById("google-signin-btn-overlay"),
-                        { theme: "outline", size: "large", width: 300, logo_alignment: "center", text: "signin_with" }
+                        courseBtn,
+                        { theme: "outline", size: "large", width: 300, logo_alignment: "center" }
                     );
-
-                    if (typeof window.renderModalAuth === 'function') {
-                        window.renderModalAuth();
-                    }
-                } else {
-                    console.error("Google Identity Services SDK not loaded.");
+                    // Set context when interacting with course section
+                    courseBtn.addEventListener('mousedown', () => { window.activeAuthContext = 'course'; });
                 }
-            };
+
+                // Initial context is course by default
+                window.activeAuthContext = 'course';
+
+                // Let auth.js render its button
+                if (typeof window.renderModalAuth === 'function') {
+                    window.renderModalAuth();
+                }
+            });
 
         })();
     </script>
