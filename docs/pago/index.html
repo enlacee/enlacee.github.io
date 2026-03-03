@@ -44,20 +44,21 @@
             <div id="method-yape" class="method-details payment-details">
                 <div class="qr-container">
                     <!-- URL temporal de QR -->
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=YAPE_DATA_HERE"
-                        alt="QR Yape" id="yape-qr">
+                    <img src="./images/yape-anibal-400x400.png" alt="QR Yape" id="yape-qr">
                 </div>
                 <p style="font-size: 0.9rem;">Escanea el código QR yapear el monto exacto.</p>
-                <p style="font-weight: 700; margin-top: 5px;">A nombre de: ANIBAL</p>
+                <p style="font-weight: 700; margin-top: 5px;">A nombre de: VICTOR COPITAN</p>
             </div>
 
             <div id="method-binance" class="method-details payment-details hidden">
                 <div class="qr-container">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=BINANCE_DATA_HERE"
-                        alt="QR Binance" id="binance-qr">
+                    <img src="./images/binance-anibal-400x400.png" alt="QR Binance" id="binance-qr">
                 </div>
                 <p style="font-size: 0.9rem;">Paga con Binance Pay ID o QR.</p>
-                <p style="font-weight: 700; margin-top: 5px;">ID: 123456789</p>
+                <p style="font-weight: 700; margin-top: 5px;">ID: 166309021</p>
+                <p style="font-weight: 700; margin-top: 5px;">Nickname: User-0510a</p>
+
+
             </div>
 
             <div id="method-paypal" class="method-details payment-details hidden">
@@ -107,7 +108,7 @@
     </div>
 
     <script>
-        const API_URL = 'https://script.google.com/macros/s/AKfycbxkIHPWrcPxnagqnfBS9PQmNp2zO2Ji2YIhQL9MGXmIiE2JNIqUU2flzcacyFS0rz8F/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbzzdOjG80izEhJK8QMibSpHc8h2lMME-g6cIX6qFsmPS_Jx1mlME_ueo9qeuSU_WbnC/exec';
         let currentProduct = null;
 
         async function init() {
@@ -144,7 +145,7 @@
             document.getElementById('product-desc').innerHTML = p.descripcion;
 
             // Actualizar link de PayPal dinámico (ejemplo simple)
-            document.getElementById('paypal-link').href = `https://www.paypal.com/paypalme/tuusuario/${p.precio}`;
+            document.getElementById('paypal-link').href = `https://www.paypal.com/paypalme/anibalcopitan/${p.precio}`;
         }
 
         function showError(msg) {
