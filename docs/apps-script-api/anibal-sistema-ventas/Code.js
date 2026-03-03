@@ -7,6 +7,7 @@ function onOpen() {
     .addItem("Generate Product ID", "generarIdFilaActual")
     .addToUi();
 }
+
 function generarIdFilaActual() {
   const sheet = SpreadsheetApp.getActiveSheet();
   if (sheet.getName() !== "Productos") return;
@@ -41,14 +42,6 @@ function generateId(length = 8) {
   return result;
 }
 
-function myFunction() {
-
-  // this is a comment on online Editor (by anibal)
-  
-  // This is a commnet on my desktop (by terminal)
-}
-
-
 /**
  * App Script by chatgpt
  */
@@ -79,6 +72,9 @@ function doGet(e) {
   }
 }
 
+/**
+ * get product by id
+ */
 function testgetProductById(){console.log(getProductById('PYbP2v5Q'));}
 function getProductById(id) {
   const sheet = SpreadsheetApp
@@ -103,10 +99,20 @@ function getProductById(id) {
   return null;
 }
 
-
+/**
+ * return json data
+ */
 function jsonResponse(obj) {
   return ContentService
     .createTextOutput(JSON.stringify(obj))
     .setMimeType(ContentService.MimeType.JSON);
 }
+
+/**
+ * Function Hi
+ */
+function  saludarATitok(){
+  console.log("hola tiktok");
+}
+
 
