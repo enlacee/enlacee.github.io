@@ -1,4 +1,6 @@
-
+function tetsGetConfig(){
+  getConfig("BASE_PAYMENT_URL")
+}
 
 /**
  * Helper to get config from "Settings" sheet
@@ -7,20 +9,98 @@ function getConfig(key) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Settings");
   if (!sheet) return null;
   const data = sheet.getDataRange().getValues();
-  for (let i = 1; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (data[i][0] === key) return data[i][1];
   }
   return null;
 }
 
+
 /**
- * Create menu for create unique ID
+ * Create menu for create unique ID and sync tools
  */
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu("⚙️ Admin Tools")
     .addItem("Generate Product ID", "generarIdFilaActual")
+    .addSeparator()
+    .addItem("🔄 Sync All Links", "syncAllLinks")
     .addToUi();
+}
+
+/**
+ * Detect manual edits to Column A in "Productos" sheet
+ */
+function onEdit(e) {
+  try {
+    const sheet = e.source.getActiveSheet();
+    const range = e.range;
+
+    if (sheet.getName() !== "Productos") return;
+
+    const col = range.getColumn();
+    const row = range.getRow();
+
+    // Si cambia la Columna A (ID)
+    if (col === 1 && row > 1) {
+      const newId = range.getValue();
+      updateLinkForRow(sheet, row, newId);
+    }
+  } catch (err) {
+    console.error("Error in onEdit: " + err.toString());
+  }
+}
+
+/**
+ * Manually sync all links in the Productos sheet
+ */
+function syncAllLinks() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Productos");
+  if (!sheet) {
+    SpreadsheetApp.getActive().toast("Error: No se encontró la hoja 'Productos'");
+    return;
+  }
+
+  const data = sheet.getDataRange().getValues();
+  const baseUrl = getConfig("BASE_PAYMENT_URL");
+
+  if (!baseUrl) {
+    SpreadsheetApp.getActive().toast("Error: Configura BASE_PAYMENT_URL en Settings");
+    return;
+  }
+
+  const LINK_COL_INDEX = 5; // índice 5 = columna F en el array
+
+  for (let i = 1; i < data.length; i++) {
+    const id = data[i][0]; 
+    const link = data[i][LINK_COL_INDEX];
+
+    // solo generar si hay ID y el link está vacío
+    if (id && !link) {
+      updateLinkForRow(sheet, i + 1, id);
+    }
+  }
+
+  SpreadsheetApp.getActive().toast("Links faltantes sincronizados");
+}
+
+/**
+ * Helper to update/clear link based on ID
+ */
+function updateLinkForRow(sheet, row, id) {
+  const LINK_COL = 6; // Column F
+  const linkCell = sheet.getRange(row, LINK_COL);
+
+  if (!id) {
+    linkCell.clearContent();
+    return;
+  }
+
+  const baseUrl = getConfig("BASE_PAYMENT_URL");
+  if (baseUrl) {
+    const fullLink = baseUrl.endsWith('/') ? `${baseUrl}?p=${id}` : `${baseUrl}/?p=${id}`;
+    linkCell.setValue(fullLink);
+  }
 }
 
 function generarIdFilaActual() {
@@ -31,9 +111,7 @@ function generarIdFilaActual() {
   if (row === 1) return;
 
   const ID_COL = 1;      // Column A
-  const LINK_COL = 6;    // Column F
   const idCell = sheet.getRange(row, ID_COL);
-  const linkCell = sheet.getRange(row, LINK_COL);
 
   if (idCell.getValue()) {
     SpreadsheetApp.getActive().toast("Esta fila ya tiene ID");
@@ -41,15 +119,10 @@ function generarIdFilaActual() {
   }
 
   const newId = generateId();
-  const baseUrl = getConfig("BASE_PAYMENT_URL");
-
   idCell.setValue(newId);
 
-  // Si existe la URL base, generar el link automáticamente
-  if (baseUrl) {
-    const fullLink = baseUrl.endsWith('/') ? `${baseUrl}?p=${newId}` : `${baseUrl}/?p=${newId}`;
-    linkCell.setValue(fullLink);
-  }
+  // Forzamos la actualización del link
+  updateLinkForRow(sheet, row, newId);
 
   SpreadsheetApp.getActive().toast("ID y Link generados con éxito");
 }
