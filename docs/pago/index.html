@@ -85,12 +85,8 @@
                         <input type="email" id="client-email" required placeholder="correo@ejemplo.com">
                     </div>
                     <div class="form-group">
-                        <label>ID de Transacción / Operación</label>
-                        <input type="text" id="txn-id" required placeholder="Ej. 123456789">
-                    </div>
-                    <div class="form-group">
-                        <label>Adjuntar Captura (Opcional pero recomendado)</label>
-                        <input type="file" id="screenshot" accept="image/*">
+                        <label>Adjuntar Captura (Obligatorio)</label>
+                        <input type="file" id="screenshot" accept="image/*" required>
                     </div>
                     <button type="submit" class="btn-submit" id="submit-btn" style="background: #27ae60;">Enviar para
                         verificación</button>
@@ -109,7 +105,7 @@
     </div>
 
     <script>
-        const API_URL = 'https://script.google.com/macros/s/AKfycbzzdOjG80izEhJK8QMibSpHc8h2lMME-g6cIX6qFsmPS_Jx1mlME_ueo9qeuSU_WbnC/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbzAOrAUR-fvcx6whq2GsQiJ1eL1I4_6kQR-qlOTMj8IDvEqrJoZFhEYXf40Sxnb7NsI/exec';
         let currentProduct = null;
 
         async function init() {
@@ -180,7 +176,6 @@
 
             const name = document.getElementById('client-name').value;
             const email = document.getElementById('client-email').value;
-            const txnId = document.getElementById('txn-id').value;
             const fileInput = document.getElementById('screenshot');
 
             let imageData = null;
@@ -195,11 +190,9 @@
             const payload = {
                 productId: currentProduct.id,
                 productName: currentProduct.nombre,
-                soles: 34, // Esto podría ser dinámico según el precio real
                 dollars: currentProduct.precio,
                 customerName: name,
                 customerEmail: email,
-                transactionId: txnId,
                 image: imageData,
                 imageName: imageName
             };
