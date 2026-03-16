@@ -1,11 +1,17 @@
 
 
 /**
- * App for sale data of payment process
+ * Helper to get config from "Settings" sheet
  */
-
-// Guardar comprobante de pago: folder name = ventas (this can be changed any time)
-const FOLDER_ID = "1Q5ibazYmKoYeSbX-Rl1xVPhUoYNRSdnM";
+function getConfig(key) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Settings");
+  if (!sheet) return null;
+  const data = sheet.getDataRange().getValues();
+  for (let i = 1; i < data.length; i++) {
+    if (data[i][0] === key) return data[i][1];
+  }
+  return null;
+}
 
 /**
  * Create menu for create unique ID
@@ -24,8 +30,10 @@ function generarIdFilaActual() {
   const row = sheet.getActiveRange().getRow();
   if (row === 1) return;
 
-  const ID_COL = 1;
+  const ID_COL = 1;      // Column A
+  const LINK_COL = 6;    // Column F
   const idCell = sheet.getRange(row, ID_COL);
+  const linkCell = sheet.getRange(row, LINK_COL);
 
   if (idCell.getValue()) {
     SpreadsheetApp.getActive().toast("Esta fila ya tiene ID");
@@ -33,10 +41,17 @@ function generarIdFilaActual() {
   }
 
   const newId = generateId();
+  const baseUrl = getConfig("BASE_PAYMENT_URL");
 
   idCell.setValue(newId);
 
-  SpreadsheetApp.getActive().toast("ID generado");
+  // Si existe la URL base, generar el link automáticamente
+  if (baseUrl) {
+    const fullLink = baseUrl.endsWith('/') ? `${baseUrl}?p=${newId}` : `${baseUrl}/?p=${newId}`;
+    linkCell.setValue(fullLink);
+  }
+
+  SpreadsheetApp.getActive().toast("ID y Link generados con éxito");
 }
 
 /**
@@ -166,7 +181,8 @@ function doPost(e) {
  */
 function saveToDrive(base64Data, fileName) {
   try {
-    const folder = DriveApp.getFolderById(FOLDER_ID);
+    const folderId = getConfig("FOLDER_ID") || "1Q5ibazYmKoYeSbX-Rl1xVPhUoYNRSdnM"; // Fallback provided just in case
+    const folder = DriveApp.getFolderById(folderId);
 
     const contentType = base64Data.substring(5, base64Data.indexOf(';'));
     const bytes = Utilities.base64Decode(base64Data.split(',')[1]);
