@@ -1,4 +1,0 @@
-# Ignorar carpetas de tests
-test/**
-*.test.js
-node_modules/**
