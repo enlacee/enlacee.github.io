@@ -1,4 +1,4 @@
-function tetsGetConfig(){
+function tetsGetConfig() {
   getConfig("BASE_PAYMENT_URL")
 }
 
@@ -62,44 +62,57 @@ function syncAllLinks() {
   }
 
   const data = sheet.getDataRange().getValues();
-  const baseUrl = getConfig("BASE_PAYMENT_URL");
+  const baseUrl1 = getConfig("BASE_PAYMENT_URL");
+  const baseUrl2 = getConfig("BASE_PAYMENT_URL2");
 
-  if (!baseUrl) {
-    SpreadsheetApp.getActive().toast("Error: Configura BASE_PAYMENT_URL en Settings");
+  if (!baseUrl1 && !baseUrl2) {
+    SpreadsheetApp.getActive().toast("Error: Configura BASE_PAYMENT_URL o BASE_PAYMENT_URL2 en Settings");
     return;
   }
 
-  const LINK_COL_INDEX = 5; // índice 5 = columna F en el array
+  const LINK1_COL_INDEX = 5; // Column F
+  const LINK2_COL_INDEX = 6; // Column G
 
   for (let i = 1; i < data.length; i++) {
-    const id = data[i][0]; 
-    const link = data[i][LINK_COL_INDEX];
+    const id = data[i][0];
+    const link1 = data[i][LINK1_COL_INDEX];
+    const link2 = data[i][LINK2_COL_INDEX];
 
-    // solo generar si hay ID y el link está vacío
-    if (id && !link) {
+    // Sincronizar si hay ID y alguno de los links falta
+    if (id && (!link1 || !link2)) {
       updateLinkForRow(sheet, i + 1, id);
     }
   }
 
-  SpreadsheetApp.getActive().toast("Links faltantes sincronizados");
+  SpreadsheetApp.getActive().toast("Sincronización de links completada");
 }
 
 /**
  * Helper to update/clear link based on ID
  */
 function updateLinkForRow(sheet, row, id) {
-  const LINK_COL = 6; // Column F
-  const linkCell = sheet.getRange(row, LINK_COL);
+  const COL_F = 6;
+  const COL_G = 7;
+
+  const cellF = sheet.getRange(row, COL_F);
+  const cellG = sheet.getRange(row, COL_G);
 
   if (!id) {
-    linkCell.clearContent();
+    cellF.clearContent();
+    cellG.clearContent();
     return;
   }
 
-  const baseUrl = getConfig("BASE_PAYMENT_URL");
-  if (baseUrl) {
-    const fullLink = baseUrl.endsWith('/') ? `${baseUrl}?p=${id}` : `${baseUrl}/?p=${id}`;
-    linkCell.setValue(fullLink);
+  const baseUrl1 = getConfig("BASE_PAYMENT_URL");
+  if (baseUrl1) {
+    const fullLink1 = `${baseUrl1}?p=${id}`;
+    cellF.setValue(fullLink1);
+  }
+
+  const baseUrl2 = getConfig("BASE_PAYMENT_URL2");
+  if (baseUrl2) {
+    const fullLink2 = `${baseUrl2}?p=${id}`;
+    cellG.setFormula(`=HYPERLINK("${fullLink2}", "🔗 Abrir Pago")`);
   }
 }
 
@@ -140,38 +153,41 @@ function generateId(length = 8) {
 }
 
 /**
- * App Script by chatgpt
+ * App Script Web App Entry Point 
+ * (p = se leera en la plantilla variable y parametro tambien por URL GET)
  */
 function doGet(e) {
-  try {
-    const productId = e.parameter.p;
+  const p = e.parameter.p;
+  const template = HtmlService.createTemplateFromFile("index");
+  template.p = p || "";
 
-    if (!productId) {
-      return jsonResponse({
-        error: "Missing product id"
-      });
-    }
-
-    const product = getProductById(productId);
-
-    if (!product) {
-      return jsonResponse({
-        error: "Product not found"
-      });
-    }
-
-    return jsonResponse(product);
-
-  } catch (error) {
-    return jsonResponse({
-      error: error.toString()
-    });
-  }
+  return template.evaluate()
+    .setTitle("Pasarela de Pago | Anibal")
+    .addMetaTag("viewport", "width=device-width, initial-scale=1.0")
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
 /**
- * get product by id
+ * Helper to include files in templates
  */
+function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
+}
+
+/**
+ * get product by id (exposed to client)
+ */
+function getProductData(id) {
+  try {
+    if (!id) return { error: "Missing product id" };
+    const product = getProductById(id);
+    if (!product) return { error: "Product not found" };
+    return product;
+  } catch (error) {
+    return { error: error.toString() };
+  }
+}
+
 function testgetProductById() { console.log(getProductById('PYbP2v5Q')); }
 function getProductById(id) {
   const sheet = SpreadsheetApp
@@ -179,9 +195,9 @@ function getProductById(id) {
     .getSheetByName("Productos");
 
   const data = sheet.getDataRange().getValues();
-  const headers = data[0];
 
   for (let i = 1; i < data.length; i++) {
+    // Check if ID matches and product is active (Column E = index 4)
     if (data[i][0].toString() === id.toString() && data[i][4].toString() === "1") {
       return {
         id: data[i][0],
@@ -197,7 +213,14 @@ function getProductById(id) {
 }
 
 /**
- * return json data
+ * Register payment (exposed to client)
+ */
+function registerPayment(payload) {
+  return doPost({ postData: { contents: JSON.stringify(payload) } });
+}
+
+/**
+ * return json data (kept for legacy/API support if needed)
  */
 function jsonResponse(obj) {
   return ContentService
