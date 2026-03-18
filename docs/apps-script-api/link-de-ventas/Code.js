@@ -188,6 +188,16 @@ function getProductData(id) {
   }
 }
 
+function testgetProduct() { console.log(getProduct('PYbP2v5Q')); }
+/**
+ * Function call
+ * by index.html
+ */
+function getProduct(id) {
+  // tu lógica con Sheets
+  return getProductById(id)
+}
+
 function testgetProductById() { console.log(getProductById('PYbP2v5Q')); }
 function getProductById(id) {
   const sheet = SpreadsheetApp

@@ -62,7 +62,7 @@
             <div id="method-paypal" class="method-details payment-details hidden">
                 <div style="margin: 30px 0;">
                     <a href="#" id="paypal-link" class="btn-submit"
-                        style="text-decoration: none; display: inline-block;">Pagar con PayPal</a>
+                        style="text-decoration: none; display: inline-block;" target="_top">Pagar con PayPal</a>
                 </div>
                 <p style="font-size: 0.9rem;">Serás redirigido a PayPal para completar el pago.</p>
             </div>
@@ -117,6 +117,7 @@ function init() {
 
     document.getElementById('loading').style.display = 'block';
 
+    /*
     fetch(API_URL + '?p=' + productId)
         .then(function (response) {
             return response.json();
@@ -132,6 +133,22 @@ function init() {
         .catch(function () {
             showError("Error de conexión con el servidor.");
         });
+    */
+  google.script.run
+    .withSuccessHandler(function (data) {
+        if (!data) {
+            showError("Producto no encontrado.");
+            return;
+        }
+        currentProduct = data;
+        renderProduct(data);
+    })
+    .withFailureHandler(function () {
+        showError("Error de conexión.");
+    })
+    .getProduct(productId);
+
+
 }
 
 function renderProduct(p) {
