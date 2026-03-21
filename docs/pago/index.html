@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -39,6 +40,12 @@
                 <button class="method-btn" onclick="showMethod('paypal')">
                     <span>PayPal</span>
                 </button>
+            </div>
+
+            <div class="help-cta">
+                <p>¿Tienes dudas antes de pagar? <a
+                        href="https://wa.me/51970142637?text=Hola%20Anibal,%20tengo%20una%20duda%20antes%20de%20pagar%20por..."
+                        target="_blank">Escríbeme por WhatsApp</a></p>
             </div>
 
             <div id="method-yape" class="method-details payment-details">
@@ -96,6 +103,11 @@
             <div id="success-msg">
                 <h3>¡Gracias por tu pago!</h3>
                 <p>Estamos verificando tu transacción. Recibirás un correo con el acceso en unos minutos.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20ya%20realic%C3%A9%20mi%20pago%20y%20adjunt%C3%A9%20la%20captura.%20Mi%20nombre%20es..."
+                    target="_blank" class="btn-whatsapp-support">
+                    <i class="fab fa-whatsapp"></i>
+                    Avisar por WhatsApp
+                </a>
             </div>
 
             <div id="error-msg" style="display:none; color: #e74c3c; text-align: center; margin-top: 20px;">
@@ -228,6 +240,11 @@
 
         init();
     </script>
+    <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20tengo%20una%20pregunta..." class="whatsapp-float"
+        target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Dudas? Escríbeme</span>
+    </a>
 </body>
 
 </html>
