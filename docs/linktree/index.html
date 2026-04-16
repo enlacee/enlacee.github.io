@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkTree | Anibal Copitan</title>
+    <title>Aníbal Copitán | Crea Apps con Linux y Monetiza tu Talento</title>
     <!-- SEO & Favicons -->
     <meta name="description"
-        content="Encuentra todos mis productos digitales, comunidades y recursos sobre Linux, Bash y Programación en un solo lugar.">
+        content="Construyo apps reales con Linux que generan ingresos. Aprende programación, monetización y mira mis proyectos como OkeyPay y Cobra con 1 Link.">
     <link rel="canonical" href="https://anibalcopitan.com/linktree/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anibalcopitan.com/linktree/">
-    <meta property="og:title" content="LinkTree | Anibal Copitan - Experto en Linux">
+    <meta property="og:title" content="Aníbal Copitán | Desarrollador de Apps y Monetización">
     <meta property="og:description"
-        content="Recursos, comunidades y productos digitales para dominar Linux y servidores.">
+        content="Te enseño a crear apps reales con Linux que puedes convertir en dinero. Mira mis recursos y proyectos.">
     <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://anibalcopitan.com/linktree/">
-    <meta property="twitter:title" content="LinkTree | Anibal Copitan - Experto en Linux">
+    <meta property="twitter:title" content="Aníbal Copitán | Desarrollador de Apps y Monetización">
     <meta property="twitter:description"
-        content="Recursos, comunidades y productos digitales para dominar Linux y servidores.">
+        content="Te enseño a crear apps reales con Linux que puedes convertir en dinero. Mira mis recursos y proyectos.">
     <meta property="twitter:image" content="https://anibalcopitan.com/anibal-profile.jpg">
 
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -38,7 +38,7 @@
         "@type": "Person",
         "name": "Anibal Copitan",
         "alternateName": "Anibal Linux",
-        "description": "Experto en Linux, VPS y Servidores en Casa.",
+        "description": "Desarrollador de Apps con Linux y experto en monetización de proyectos digitales.",
         "image": "https://anibalcopitan.com/anibal-profile.jpg",
         "sameAs": [
           "https://www.youtube.com/@anibal-linux",
@@ -199,6 +199,25 @@
             padding-left: 0.5rem;
         }
 
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite ease-in-out;
+        }
+
         .links-group {
             width: 100%;
             display: flex;
@@ -347,10 +366,10 @@
         </div>
 
         <!-- Links Group -->
-        <div class="section-title">Contacto y Canales</div>
+        <h2 class="section-title">Contacto y Canales</h2>
         <div class="links-group">
-            <a href="https://wa.me/51970142637?text=Hola%2C%20Anibal%20tengo%20una%20consulta"
-                class="link-card featured">
+            <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20vi%20tu%20TikTok%20y%20queria%20hacerte%20una%20pregunta"
+                class="link-card featured pulse">
                 <i class="fab fa-whatsapp"></i> 👋 ¡Hola! Escríbeme por aquí
             </a>
             <a href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO?mode=r_c" class="link-card">
@@ -359,7 +378,7 @@
         </div>
 
         <!-- Resources Section -->
-        <div class="section-title">Recursos Gratuitos</div>
+        <h2 class="section-title">Recursos Gratuitos</h2>
         <div class="links-group">
             <a href="https://blog.anibalcopitan.com" class="link-card">
                 <i class="fas fa-terminal"></i> Mi Blog: Tutoriales y Guías Linux
@@ -367,7 +386,7 @@
         </div>
 
         <!-- Products Section -->
-        <div class="section-title">Mis Productos Digitales</div>
+        <h2 class="section-title">Mis Productos Digitales</h2>
         <a href="../productos/" class="link-card featured"
             style="margin-bottom: 1.5rem; background: linear-gradient(45deg, var(--primary), var(--accent)); color: white;">
             <i class="fas fa-shopping-cart"></i> ¿Qué vendes? (Catálogo Completo)
