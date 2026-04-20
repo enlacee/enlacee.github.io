@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar App en Play Store | Servicio de Lanzamiento Rápido | Aníbal Copitán</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="¿Atrapado en los 20 testers de Google Play? Publico tu app de forma rápida y segura. Servicio técnico especializado para desarrolladores y empresas.">
+    <link rel="canonical" href="https://anibalcopitan.com/publicar-app-android/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Publicar tu App Android sin Estrés | Aníbal Copitán">
+    <meta property="og:description"
+        content="Superamos las restricciones de Google Play por ti. Publicación garantizada y soporte técnico experto.">
+    <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #18bc9c;
+            --primary-dark: #128f76;
+            --secondary: #2c3e50;
+            --bg-gradient: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a9b1d6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .badge {
+            background: rgba(24, 188, 156, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(24, 188, 156, 0.2), rgba(52, 152, 219, 0.2));
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: #1a1a2e;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(24, 188, 156, 0.3);
+            margin-top: 1rem;
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .btn-whatsapp i {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cta-box {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="../linktree/" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="logo">Aníbal Linux</div>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <span class="badge">Google Play Store Expert</span>
+                <h1>Publica tu App en Tiempo Récord</h1>
+                <p>Olvídate del estrés de los 20 testers y las revisiones rechazadas. Yo me encargo de todo el proceso
+                    técnico para que tu app esté en la tienda hoy mismo.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20quiero%20publicar%20mi%20app%20en%20Play%20Store"
+                    class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Iniciar Publicación
+                </a>
+            </section>
+
+            <section class="grid">
+                <div class="card">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Adiós a los 20 Testers</h3>
+                    <p>Gestiono los requisitos de prueba de Google Play para que no pierdas tiempo buscando voluntarios
+                        por 14 días.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Publicación Garantizada</h3>
+                    <p>Revisión técnica de tu APK/AAB antes de subirlo para evitar suspensiones o rechazos innecesarios.
+                    </p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Sin Cuenta Propia</h3>
+                    <p>¿No tienes cuenta de desarrollador? Podemos publicar bajo mi infraestructura de confianza para
+                        lanzamientos ALPHA.</p>
+                </div>
+            </section>
+
+            <section class="cta-box">
+                <h2>¿Listo para ver tu app en millones de dispositivos?</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-dim);">Dime qué app tienes y la revisamos técnicamente
+                    sin compromiso.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20quiero%20publicar%20mi%20app%20en%20Play%20Store"
+                    class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Hablar con el Experto
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Aníbal Copitán. Especialista en Infraestructura y Desarrollo Android.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Lima, Perú para el mundo.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

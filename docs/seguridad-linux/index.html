@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad Linux | Auditoría y Hardening de VPS | Aníbal Copitán</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="¿Tu servidor Linux es seguro? Ofrezco auditorías rápidas y hardening de VPS para proteger tus datos y aplicaciones de ataques externos.">
+    <link rel="canonical" href="https://anibalcopitan.com/seguridad-linux/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Protege tu Servidor Linux | Auditoría de Seguridad">
+    <meta property="og:description"
+        content="Cortafuegos, monitoreo y cierre de vulnerabilidades en tu VPS Linux. No esperes a que sea tarde.">
+    <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --bg-gradient: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a9b1d6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-dim);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="../linktree/" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="logo">Aníbal Linux</div>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <h1>Blinda tu Servidor Linux</h1>
+                <p style="font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2rem;">No esperes a un ataque para
+                    preocuparte por tu seguridad. Realizo auditorías rápidas y cierro las puertas traseras de tu VPS
+                    para que duermas tranquilo.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20necesito%20una%20auditoria%20de%20seguridad%20para%20mi%20servidor"
+                    class="btn-action">
+                    <i class="fas fa-user-shield" style="margin-right: 10px;"></i> Auditoría Ahora
+                </a>
+            </section>
+
+            <section class="grid">
+                <div class="card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Hardening Completo</h3>
+                    <p>Configuración avanzada de cortafuegos, SSH seguro y eliminación de servicios innecesarios
+                        expuestos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-search"></i>
+                    <h3>Detección de Brechas</h3>
+                    <p>Escaneo de puertos y verificación de logs para identificar intentos de intrusión previos o
+                        activos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Hacking Ético</h3>
+                    <p>Pruebas de penetración básicas para asegurar que tus apps y bases de datos no sean vulnerables.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Aníbal Copitán. Especialista en Seguridad y Servidores Linux.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

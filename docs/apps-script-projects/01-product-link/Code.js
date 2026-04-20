@@ -112,7 +112,7 @@ function updateLinkForRow(sheet, row, id) {
   const baseUrl2 = getConfig("BASE_PAYMENT_URL2");
   if (baseUrl2) {
     const fullLink2 = `${baseUrl2}?p=${id}`;
-    cellG.setFormula(`=HYPERLINK("${fullLink2}", "🔗 Abrir Pago")`);
+    cellG.setFormula(`=HYPERLINK("${fullLink2}", "🔗 Abrir Link")`);
   }
 }
 
@@ -162,7 +162,7 @@ function doGet(e) {
   template.p = p || "";
 
   return template.evaluate()
-    .setTitle("Pasarela de Pago | Anibal")
+    .setTitle("Detalle del producto | Anibal")
     .addMetaTag("viewport", "width=device-width, initial-scale=1.0")
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
@@ -282,23 +282,63 @@ function doPost(e) {
   }
 }
 
+function getOrCreateFolder() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const file = DriveApp.getFileById(ss.getId());
+
+  const parents = file.getParents();
+  const folderName = ss.getName() + "-imagenes";
+
+  let parent = null;
+
+  if (parents.hasNext()) {
+    parent = parents.next();
+  }
+
+  let folders;
+
+  if (parent) {
+    folders = parent.getFoldersByName(folderName);
+  } else {
+    folders = DriveApp.getFoldersByName(folderName);
+  }
+
+  if (folders.hasNext()) {
+    return folders.next();
+  }
+
+  if (parent) {
+    return parent.createFolder(folderName);
+  }
+
+  return DriveApp.createFolder(folderName);
+}
+
+function testgetOrCreateFolder() {
+  console.log(getOrCreateFolder())
+}
+
 /**
  * Save Base64 image to Google Drive
  */
 function saveToDrive(base64Data, fileName) {
   try {
-    const folderId = getConfig("FOLDER_ID") || "1Q5ibazYmKoYeSbX-Rl1xVPhUoYNRSdnM"; // Fallback provided just in case
-    const folder = DriveApp.getFolderById(folderId);
+    const folder = getOrCreateFolder();
+
+    Logger.log("Folder URL: " + folder.getUrl());
 
     const contentType = base64Data.substring(5, base64Data.indexOf(';'));
     const bytes = Utilities.base64Decode(base64Data.split(',')[1]);
     const blob = Utilities.newBlob(bytes, contentType, fileName);
+
     const file = folder.createFile(blob);
 
     file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
 
+    Logger.log("File URL: " + file.getUrl());
+
     return file.getUrl();
   } catch (e) {
-    return "Error al guardar imagen: " + e.toString();
+    return "Error: " + e.toString();
   }
 }

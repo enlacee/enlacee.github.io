@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edición de Video para Desarrolladores | Contenido Tech & Tutoriales | Aníbal Copitán</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Servicio de edición de video especializado en tecnología. Entiendo tu código y tu flujo de trabajo. Transforma tus tutoriales en contenido viral y profesional.">
+    <link rel="canonical" href="https://anibalcopitan.com/edicion-video/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Edición de Video Tech con Propósito | Aníbal Copitán">
+    <meta property="og:description"
+        content="Un editor que habla código. Especialista en tutoriales, demos de productos y contenido tech para TikTok y YouTube.">
+    <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --accent: #9b59b6;
+            --bg-gradient: radial-gradient(circle at top right, #1a1a2e, #16213e, #0f3460);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a9b1d6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .badge {
+            background: rgba(52, 152, 219, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Video Feature Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .feat-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .feat-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .feat-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Portfolio Tease */
+        .portfolio-box {
+            background: var(--glass);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .btn-video {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-video:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.5);
+        }
+
+        .btn-video i {
+            margin-right: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .portfolio-box {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="../linktree/" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="logo" style="color: var(--primary); font-weight: 800;">Aníbal Linux</div>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <span class="badge">Tech Video Editor</span>
+                <h1>Edición de Video para Mentes Técnicas</h1>
+                <p>No busques un editor de videos, busca un desarrollador que entienda tu contenido. Transformo tus
+                    tutoriales y demos en experiencias dinámicas que tu audiencia amará.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20necesito%20ayuda%20editando%20mi%20contenido%20tecnico"
+                    class="btn-video">
+                    <i class="fas fa-play"></i> Quiero editar mis videos
+                </a>
+            </section>
+
+            <section class="features">
+                <div class="feat-card">
+                    <h3>Comprensión de Código</h3>
+                    <p>Sé qué partes del código son críticas y cuáles se pueden acelerar. Resalto la sintaxis y los
+                        errores de forma inteligente.</p>
+                </div>
+                <div class="feat-card">
+                    <h3>Tutoriales Dinámicos</h3>
+                    <p>Agrego zooms, transiciones limpias y micro-animaciones que mantienen la atención del espectador
+                        sin distraer del aprendizaje.</p>
+                </div>
+                <div class="feat-card">
+                    <h3>Focus en TikTok/Socials</h3>
+                    <p>Edito tu material para optimizar el "Hook" inicial y maximizar el tiempo de visualización en
+                        plataformas verticales.</p>
+                </div>
+            </section>
+
+            <section class="portfolio-box">
+                <h2>Un editor que entiende la Terminal</h2>
+                <p style="margin-top: 1rem; color: var(--text-dim);">He editado cientos de horas de contenido propio
+                    sobre Linux, Hacking y Programación. Aplico la misma calidad y rigor a tus proyectos.</p>
+            </section>
+
+            <section class="cta-section">
+                <h2>¿Tienes material grabado?</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-dim);">Envíame un mensaje y dime qué tipo de contenido
+                    creas. Hacemos una prueba.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20necesito%20ayuda%20editando%20mi%20contenido%20tecnico"
+                    class="btn-video">
+                    <i class="fab fa-whatsapp"></i> Hablar con Aníbal
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Aníbal Copitán. Contenido Tech de Alto Impacto.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

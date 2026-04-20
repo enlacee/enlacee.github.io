@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu VPS en Casa | Nube Privada y Ahorro | Aníbal Copitán</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Deja de pagar suscripciones mensuales. Te enseño a montar tu propia nube privada y VPS en casa con Linux. Privacidad total y control absoluto.">
+    <link rel="canonical" href="https://anibalcopitan.com/vps-en-casa/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Monta tu Propio Servidor en Casa | Aníbal Copitán">
+    <meta property="og:description"
+        content="Tu propia nube privada (tipo Google Drive/Dropbox) sin pagos mensuales. 100% privado.">
+    <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --bg-gradient: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a9b1d6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: #1a1a2e;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-dim);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="../linktree/" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="logo">Aníbal Linux</div>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <h1>Tu Propia Nube en Casa</h1>
+                <p style="font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2rem;">¿Cansado de pagar
+                    suscripciones mensuales a Google o Apple? Te enseño a transformar una PC vieja en un servidor
+                    privado 100% seguro y accesible desde cualquier lugar.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20quiero%20informacion%20sobre%20montar%20mi%20VPS%20en%20casa"
+                    class="btn-action">
+                    <i class="fas fa-home" style="margin-right: 10px;"></i> Empezar mi Nube
+                </a>
+            </section>
+
+            <section class="grid">
+                <div class="card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Adiós Suscripciones</h3>
+                    <p>Libérate de los pagos mensuales. Tu almacenamiento crece tanto como tus discos duros lo permitan.
+                    </p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-lock"></i>
+                    <h3>Privacidad Total</h3>
+                    <p>Tus datos no están en los servidores de una gran empresa. Están en tu casa, bajo tu control
+                        físico.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Infraestructura Pro</h3>
+                    <p>Docker, VPN, Bases de Datos y más. Aprende a usar las herramientas que usan los profesionales.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Aníbal Copitán. Infraestructura y Redes para el Hogar.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

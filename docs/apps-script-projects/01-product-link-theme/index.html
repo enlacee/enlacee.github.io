@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobra con 1 Link | Ecommerce Simple con Google Sheets | Aníbal Copitán</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Vende tus productos digitales o físicos sin pagar comisiones mensuales. Sistema simple basado en Google Sheets y un solo link. Ideal para emprendedores.">
+    <link rel="canonical" href="https://anibalcopitan.com/cobra-con-1-link/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vende Online sin Comisiones | Cobra con 1 Link">
+    <meta property="og:description"
+        content="Tu catálogo digital conectado a WhatsApp y Google Sheets. Simple, rápido y profesional.">
+    <meta property="og:image" content="https://anibalcopitan.com/anibal-profile.jpg">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #f1c40f;
+            --primary-dark: #f39c12;
+            --bg-gradient: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a9b1d6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: #1a1a2e;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(241, 196, 15, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-dim);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="../linktree/" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+            <div class="logo">Aníbal Copitán</div>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <h1>Vende Online sin Comisiones</h1>
+                <p style="font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2rem;">¿Quieres vender tus productos
+                    sin pagar Shopify o plataformas caras? Mi sistema usa Google Sheets para gestionar todo con un solo
+                    link profesional.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20me%20interesa%20el%20sistema%20Cobra%20con%201%20Link"
+                    class="btn-action">
+                    <i class="fas fa-shopping-cart" style="margin-right: 10px;"></i> Quiero mi catálogo
+                </a>
+            </section>
+
+            <section class="grid">
+                <div class="card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>0% Comisiones</h3>
+                    <p>No pagues por cada venta. El sistema es tuyo y no dependes de suscripciones mensuales.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-table"></i>
+                    <h3>Google Sheets Power</h3>
+                    <p>Gestiona stock, precios y pedidos desde una hoja de Excel sencilla que ya sabes usar.</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>Pedidos al WhatsApp</h3>
+                    <p>Cada compra llega directo a tu chat con todos los detalles del cliente listos para cerrar.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Aníbal Copitán. Soluciones de Ecommerce Simplificado.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
