@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago | Anibal</title>
     <link rel="stylesheet" href="index.css">
-    <title>Detalle del producto | Anibal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 
         <div id="main-content" style="display: none;">
             <div class="header">
-                <h1>Detalle del producto</h1>
+                <h1>Pasarela de Pago</h1>
                 <p>Simple · Práctico · Seguro</p>
             </div>
 
@@ -28,30 +29,38 @@
                 <p id="product-desc" style="font-size: 0.85rem; color: #636e72; margin-top: 10px;"></p>
             </div>
 
-            <p style="margin-bottom: 15px; font-weight: 500; font-size: 0.9rem;">Elige una opción:</p>
+            <p style="margin-bottom: 15px; font-weight: 500; font-size: 0.9rem;">Elige tu método de pago:</p>
             <div class="payment-methods">
-                <button class="method-btn active" onclick="showMethod('yape', this)"><span>Yape</span>
+                <button class="method-btn active" onclick="showMethod('yape')">
+                    <span>Yape</span>
                 </button>
-                <button class="method-btn" onclick="showMethod('binance', this)"><span>Binance</span>
+                <button class="method-btn" onclick="showMethod('binance')">
+                    <span>Binance</span>
                 </button>
-                <button class="method-btn" onclick="showMethod('paypal', this)"><span>PayPal</span>
+                <button class="method-btn" onclick="showMethod('paypal')">
+                    <span>PayPal</span>
                 </button>
+            </div>
+
+            <div class="help-cta">
+                <p>¿Tienes dudas antes de pagar? <a
+                        href="https://wa.me/51970142637?text=Hola%20Anibal,%20tengo%20una%20duda%20antes%20de%20pagar%20por..."
+                        target="_blank">Escríbeme por WhatsApp</a></p>
             </div>
 
             <div id="method-yape" class="method-details payment-details">
                 <div class="qr-container">
                     <!-- URL temporal de QR -->
-                    <img src="https://anibalcopitan.com/pago/images/yape-anibal-400x400.png" alt="QR Yape" id="yape-qr">
+                    <img src="./images/yape-anibal-400x400.png" alt="QR Yape" id="yape-qr">
                 </div>
-                <p style="font-size: 0.9rem;">Escanea el código QR y envía el monto exacto.</p>
+                <p style="font-size: 0.9rem;">Escanea el código QR yapear el monto exacto.</p>
                 <p style="font-weight: 700; margin-top: 5px;">Numero: 970142637</p>
                 <p style="font-weight: 700; margin-top: 5px;">A nombre de: VICTOR COPITAN</p>
             </div>
 
             <div id="method-binance" class="method-details payment-details hidden">
                 <div class="qr-container">
-                    <img src="https://anibalcopitan.com/pago/images/binance-anibal-400x400.png" alt="QR Binance"
-                        id="binance-qr">
+                    <img src="./images/binance-anibal-400x400.png" alt="QR Binance" id="binance-qr">
                 </div>
                 <p style="font-size: 0.9rem;">Paga con Binance Pay ID o QR.</p>
                 <p style="font-weight: 700; margin-top: 5px;">ID: 166309021</p>
@@ -63,13 +72,13 @@
             <div id="method-paypal" class="method-details payment-details hidden">
                 <div style="margin: 30px 0;">
                     <a href="#" id="paypal-link" class="btn-submit"
-                        style="text-decoration: none; display: inline-block;" target="_top">Continuar con PayPal</a>
+                        style="text-decoration: none; display: inline-block;">Pagar con PayPal</a>
                 </div>
                 <p style="font-size: 0.9rem;">Serás redirigido a PayPal para completar el pago.</p>
             </div>
 
             <button id="btn-show-form" class="btn-submit" style="margin-top: 30px;" onclick="toggleForm()">Ya realicé mi
-                envío</button>
+                pago</button>
 
             <div id="verification-form" class="verification-form">
                 <h3 style="margin-bottom: 20px; font-size: 1.1rem;">Confirmar Transacción</h3>
@@ -92,8 +101,13 @@
             </div>
 
             <div id="success-msg">
-                <h3>¡Gracias!</h3>
-                <p>Estamos procesando tu solicitud. Recibirás un correo con el acceso en unos minutos.</p>
+                <h3>¡Gracias por tu pago!</h3>
+                <p>Estamos verificando tu transacción. Recibirás un correo con el acceso en unos minutos.</p>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20ya%20realic%C3%A9%20mi%20pago%20y%20adjunt%C3%A9%20la%20captura.%20Mi%20nombre%20es..."
+                    target="_blank" class="btn-whatsapp-support">
+                    <i class="fab fa-whatsapp"></i>
+                    Avisar por WhatsApp
+                </a>
             </div>
 
             <div id="error-msg" style="display:none; color: #e74c3c; text-align: center; margin-top: 20px;">
@@ -103,7 +117,7 @@
     </div>
 
     <script>
-        const API_URL = 'https://script.google.com/macros/s/AKfycbyrzN1MLC87TkYvcFPS5xG7iszHFeP5hPOX43XZOO1ptp-LWSTnoS_0Pv1weEIlarW-/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbzAOrAUR-fvcx6whq2GsQiJ1eL1I4_6kQR-qlOTMj8IDvEqrJoZFhEYXf40Sxnb7NsI/exec';
         let currentProduct = null;
 
         async function init() {
@@ -117,7 +131,7 @@
 
             try {
                 document.getElementById('loading').style.display = 'block';
-                const response = await fetch(`${API_URL}?mode=api&p=${productId}`);
+                const response = await fetch(`${API_URL}?p=${productId}`);
                 const data = await response.json();
 
                 if (data.error) {
@@ -136,82 +150,56 @@
             document.getElementById('loading').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('product-name').innerText = p.nombre;
-            document.getElementById('product-price').innerHTML = p.precio > 0 ? p.precio + ' USD / Soles equiv.' : 'Gratis';
+            document.getElementById('product-price').innerHTML = p.precio > 0 ? `${p.precio} USD / Soles equiv.` : 'Gratis';
             document.getElementById('product-desc').innerHTML = p.descripcion;
 
-            document.getElementById('paypal-link').href = 'https://www.paypal.com/paypalme/anibalcopitan/' + p.precio;
+            // Actualizar link de PayPal dinámico (ejemplo simple)
+            document.getElementById('paypal-link').href = `https://www.paypal.com/paypalme/anibalcopitan/${p.precio}`;
         }
 
         function showError(msg) {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
-
-            var errorBox = document.getElementById('error-msg');
-            errorBox.style.display = 'block';
-            errorBox.innerText = msg;
+            document.getElementById('product-info-box')?.classList.add('hidden');
+            document.getElementById('error-msg').style.display = 'block';
+            document.getElementById('error-msg').innerText = msg;
         }
 
-        function showMethod(method, el) {
-            var details = document.querySelectorAll('.method-details');
-            var buttons = document.querySelectorAll('.method-btn');
+        function showMethod(method) {
+            document.querySelectorAll('.method-details').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.method-btn').forEach(el => el.classList.remove('active'));
 
-            for (var i = 0; i < details.length; i++) {
-                details[i].classList.add('hidden');
-            }
-
-            for (var j = 0; j < buttons.length; j++) {
-                buttons[j].classList.remove('active');
-            }
-
-            var target = document.getElementById('method-' + method);
-            if (target) {
-                target.classList.remove('hidden');
-            }
-
-            if (el) {
-                el.classList.add('active');
-            }
+            document.getElementById(`method-${method}`).classList.remove('hidden');
+            event.currentTarget.classList.add('active');
         }
 
         function toggleForm() {
-            var form = document.getElementById('verification-form');
+            const form = document.getElementById('verification-form');
             form.style.display = 'block';
             form.scrollIntoView({ behavior: 'smooth' });
             document.getElementById('btn-show-form').style.display = 'none';
         }
 
-        document.getElementById('payment-form').addEventListener('submit', function (e) {
+        document.getElementById('payment-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-
-            var btn = document.getElementById('submit-btn');
+            const btn = document.getElementById('submit-btn');
             btn.disabled = true;
             btn.innerText = 'Enviando...';
 
-            var name = document.getElementById('client-name').value;
-            var email = document.getElementById('client-email').value;
-            var fileInput = document.getElementById('screenshot');
+            const name = document.getElementById('client-name').value;
+            const email = document.getElementById('client-email').value;
+            const fileInput = document.getElementById('screenshot');
 
-            var imageName = null;
+            let imageData = null;
+            let imageName = null;
 
             if (fileInput.files.length > 0) {
-                var file = fileInput.files[0];
-                imageName = Date.now() + "_" + name.replace(/\s+/g, '_') + "_" + file.name;
-
-                toBase64(file).then(function (imageData) {
-                    sendData(name, email, imageData, imageName);
-                }).catch(function () {
-                    alert("Error procesando imagen");
-                    btn.disabled = false;
-                    btn.innerText = 'Enviar para verificación';
-                });
-
-            } else {
-                sendData(name, email, null, null);
+                const file = fileInput.files[0];
+                imageName = `${Date.now()}_${name.replace(/\s+/g, '_')}_${file.name}`;
+                imageData = await toBase64(file);
             }
-        });
 
-        function sendData(name, email, imageData, imageName) {
-            var payload = {
+            const payload = {
                 productId: currentProduct.id,
                 productName: currentProduct.nombre,
                 dollars: currentProduct.precio,
@@ -221,36 +209,42 @@
                 imageName: imageName
             };
 
-            fetch(API_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(payload)
-            })
-                .then(function () {
-                    document.getElementById('verification-form').style.display = 'none';
-                    document.getElementById('success-msg').style.display = 'block';
-                    document.getElementById('success-msg').scrollIntoView({ behavior: 'smooth' });
-                })
-                .catch(function () {
-                    alert("Error enviando datos");
+            try {
+                // Usamos no-cors si el redirect de AppScript da problemas, 
+                // pero lo ideal es manejar la respuesta.
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Apps Script requiere esto a veces para POST simples
+                    body: JSON.stringify(payload)
                 });
-        }
 
-        function toBase64(file) {
-            return new Promise(function (resolve, reject) {
-                var reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = function () {
-                    resolve(reader.result);
-                };
-                reader.onerror = function () {
-                    reject();
-                };
-            });
-        }
+                // Como usamos no-cors no podemos ver el JSON response, 
+                // pero asumimos éxito si no hay error de red.
+                document.getElementById('verification-form').style.display = 'none';
+                document.getElementById('success-msg').style.display = 'block';
+                document.getElementById('success-msg').scrollIntoView({ behavior: 'smooth' });
+
+            } catch (error) {
+                alert("Hubo un error al enviar los datos. Inténtalo de nuevo.");
+                btn.disabled = false;
+                btn.innerText = 'Enviar para verificación';
+            }
+        });
+
+        const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
 
         init();
     </script>
+    <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20tengo%20una%20pregunta..." class="whatsapp-float"
+        target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Dudas? Escríbeme</span>
+    </a>
 </body>
 
 </html>
