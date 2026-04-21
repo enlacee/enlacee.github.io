@@ -103,53 +103,33 @@
     </div>
 
     <script>
-        var API_URL = 'https://script.google.com/macros/s/AKfycbybDwdzRCYKreCfPc6IkCTXVm2iJ-Fy78SSPv3qQuCUsOfO5K10s24H9PlPV_fP8Q4z/exec';
-        var currentProduct = null;
+        const API_URL = 'https://script.google.com/macros/s/AKfycbytKHGXRj5PKfvznaLTkAqtv0cy-1Z3uvmfThO3KybYefFXVBdZiOSyPfnPUkODtr11/exec';
+        let currentProduct = null;
 
-        function init() {
-            var params = new URLSearchParams(window.location.search);
-            var productId = params.get('p');
-            //var productId = '<?= p ?>';
+        async function init() {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('p');
 
             if (!productId) {
                 showError("No se proporcionó ID de producto.");
                 return;
             }
 
-            document.getElementById('loading').style.display = 'block';
+            try {
+                document.getElementById('loading').style.display = 'block';
+                const response = await fetch(`${API_URL}?p=${productId}`);
+                const data = await response.json();
 
-            fetch(API_URL + '?p=' + productId)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    if (data.error) {
-                        showError("Producto no encontrado.");
-                        return;
-                    }
-                    currentProduct = data;
-                    renderProduct(data);
-                })
-                .catch(function () {
-                    showError("Error de conexión con el servidor.");
-                });
-            
-           /*
-            google.script.run
-                .withSuccessHandler(function (data) {
-                    if (!data) {
-                        showError("Producto no encontrado.");
-                        return;
-                    }
-                    currentProduct = data;
-                    renderProduct(data);
-                })
-                .withFailureHandler(function () {
-                    showError("Error de conexión.");
-                })
-                .getProduct(productId);
-            */
+                if (data.error) {
+                    showError("Producto no encontrado.");
+                    return;
+                }
 
+                currentProduct = data;
+                renderProduct(data);
+            } catch (error) {
+                showError("Error de conexión con el servidor.");
+            }
         }
 
         function renderProduct(p) {
