@@ -157,9 +157,33 @@ function generateId(length = 8) {
  * (p = se leera en la plantilla variable y parametro tambien por URL GET)
  */
 function doGet(e) {
-  const p = e.parameter.p;
+  const mode = e.parameter.mode;
+
+  // 👉 API JSON
+  if (mode === "api") {
+    try {
+      const productId = e.parameter.p;
+
+      if (!productId) {
+        return jsonResponse({ error: "Missing product id" });
+      }
+
+      const product = getProductById(productId);
+
+      if (!product) {
+        return jsonResponse({ error: "Product not found" });
+      }
+
+      return jsonResponse(product);
+
+    } catch (error) {
+      return jsonResponse({ error: error.toString() });
+    }
+  }
+
+  // 👉 HTML (default)
   const template = HtmlService.createTemplateFromFile("index");
-  template.p = p || "";
+  template.p = e.parameter.p || "";
 
   return template.evaluate()
     .setTitle("Detalle del producto | Anibal")
@@ -235,7 +259,8 @@ function registerPayment(payload) {
 function jsonResponse(obj) {
   return ContentService
     .createTextOutput(JSON.stringify(obj))
-    .setMimeType(ContentService.MimeType.JSON);
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeader("Access-Control-Allow-Origin", "*");
 }
 
 /**
