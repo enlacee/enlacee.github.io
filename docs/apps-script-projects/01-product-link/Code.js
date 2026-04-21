@@ -153,34 +153,10 @@ function generateId(length = 8) {
 }
 
 /**
- * App Script Web App Entry Point 
- * (p = se leera en la plantilla variable y parametro tambien por URL GET)
+ * Web App 2 → SOLO HTML (plantilla googlesheet)
+ *  * (p = se leera en la plantilla variable y parametro tambien por URL GET)
  */
 function doGet(e) {
-  const mode = e.parameter.mode;
-
-  // 👉 API JSON
-  if (mode === "api") {
-    try {
-      const productId = e.parameter.p;
-
-      if (!productId) {
-        return jsonResponse({ error: "Missing product id" });
-      }
-
-      const product = getProductById(productId);
-
-      if (!product) {
-        return jsonResponse({ error: "Product not found" });
-      }
-
-      return jsonResponse(product);
-
-    } catch (error) {
-      return jsonResponse({ error: error.toString() });
-    }
-  }
-
   // 👉 HTML (default)
   const template = HtmlService.createTemplateFromFile("index");
   template.p = e.parameter.p || "";
@@ -190,6 +166,32 @@ function doGet(e) {
     .addMetaTag("viewport", "width=device-width, initial-scale=1.0")
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
+
+
+/**
+ * Web App 1 → SOLO API (usegul for save images)
+
+function doGet(e) {
+  try {
+    const productId = e.parameter.p;
+
+    if (!productId) {
+      return jsonResponse({ error: "Missing product id" });
+    }
+
+    const product = getProductById(productId);
+
+    if (!product) {
+      return jsonResponse({ error: "Product not found" });
+    }
+
+    return jsonResponse(product);
+
+  } catch (error) {
+    return jsonResponse({ error: error.toString() });
+  }
+}
+ */
 
 /**
  * Helper to include files in templates
@@ -259,8 +261,7 @@ function registerPayment(payload) {
 function jsonResponse(obj) {
   return ContentService
     .createTextOutput(JSON.stringify(obj))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeader("Access-Control-Allow-Origin", "*");
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
