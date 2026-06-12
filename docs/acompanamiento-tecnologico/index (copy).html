@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anibal Copitan | Acompañamiento Tecnológico Personalizado</title>
+  <meta name="description"
+    content="Acceso directo a mí, Anibal, para resolver dudas técnicas, desbloquear proyectos y avanzar más rápido. Desde USD 20/mes. Sin permanencia." />
+  <link rel="canonical" href="https://anibalcopitan.com/acompanamiento-tecnologico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      /* Light grey instead of white */
+      --bg-secondary: #ffffff;
+      --text: #18181b;
+      --text-muted: #52525b;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-strong: rgba(0, 0, 0, 0.15);
+      --accent: #2563eb;
+      --accent-gradient: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+      --accent-bg: rgba(37, 99, 235, 0.08);
+      --accent-text: #1d4ed8;
+      --success: #10b981;
+      --warning-bg: rgba(245, 158, 11, 0.1);
+      --warning-text: #b45309;
+      --warning-border: rgba(245, 158, 11, 0.2);
+      --star: #f59e0b;
+      --whatsapp: #25D366;
+      --whatsapp-hover: #16a34a;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --max-width: 1080px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Premium Background Orbs */
+    .bg-orb-1,
+    .bg-orb-2 {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .bg-orb-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+      top: -150px;
+      right: -100px;
+    }
+
+    .bg-orb-2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, transparent 70%);
+      top: 300px;
+      left: -150px;
+    }
+
+    section {
+      padding: 3.5rem 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .sec-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-text);
+      margin-bottom: 1rem;
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--accent-bg);
+      border-radius: 100px;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+    }
+
+    .sec-title {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 1.5rem 0;
+      }
+
+      .hero {
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .section-alt {
+        padding: 1.25rem 1rem;
+        margin: 0.5rem 0;
+        border-radius: 16px;
+      }
+
+      .sec-label {
+        margin-bottom: 0.5rem;
+      }
+
+      .sec-title {
+        font-size: 22px;
+        margin-bottom: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+        margin-bottom: 1rem;
+      }
+
+      .hero-sub {
+        font-size: 16px;
+        margin-bottom: 1.5rem;
+      }
+
+      .pain-grid,
+      .direction-grid,
+      .skills-grid,
+      .casos-grid,
+      .diff-grid,
+      .planes-grid {
+        gap: 12px;
+      }
+
+      .pain-card,
+      .direction-item,
+      .skill-item,
+      .caso-item {
+        padding: 16px;
+      }
+
+      .plan-card {
+        padding: 1.25rem;
+      }
+
+      .cta-final {
+        padding: 2.5rem 0;
+      }
+
+      .scarcity-bar {
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 12px;
+        gap: 8px;
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+      }
+
+      .scarcity-text {
+        font-size: 13px;
+      }
+
+      .scarcity-dots {
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding-top: 3.5rem;
+      padding-bottom: 3rem;
+      position: relative;
+    }
+
+    .hero-brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid var(--border);
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 40px;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .hero-brand span {
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      background: linear-gradient(var(--bg), var(--bg)) padding-box,
+        var(--accent-gradient) border-box;
+      margin: 0 auto 1.5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+    }
+
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+
+    .hero h1 em::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-gradient);
+      opacity: 0.2;
+      border-radius: 2px;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .scarcity-bar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: rgba(245, 158, 11, 0.06);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 100px;
+      padding: 8px 8px 8px 24px;
+      margin-bottom: 2.5rem;
+    }
+
+    .scarcity-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: #92400e;
+    }
+
+    .scarcity-text strong {
+      font-weight: 800;
+      color: #78350f;
+    }
+
+    .scarcity-dots {
+      display: flex;
+      gap: 5px;
+      background: white;
+      padding: 10px 18px;
+      border-radius: 100px;
+      border: 1px solid rgba(245, 158, 11, 0.15);
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.05);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f59e0b;
+      opacity: 0.25;
+    }
+
+    .dot.filled {
+      opacity: 1;
+      background: #d97706;
+      box-shadow: 0 0 6px rgba(217, 119, 6, 0.4);
+    }
+
+    .cta-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--whatsapp);
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 16px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-whatsapp::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.5s;
+    }
+
+    .cta-whatsapp:hover::before {
+      left: 100%;
+    }
+
+    .cta-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+      background: var(--whatsapp-hover);
+    }
+
+    .cta-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hero-meta {
+      margin-top: 1rem;
+      font-size: 14px;
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+
+    /* Grids */
+    .pain-grid,
+    .direction-grid,
+    .skills-grid,
+    .casos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .pain-card,
+    .direction-item,
+    .skill-item,
+    .caso-item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .pain-card:hover,
+    .direction-item:hover,
+    .skill-item:hover,
+    .caso-item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .direction-item,
+    .skill-item,
+    .caso-item {
+      align-items: center;
+    }
+
+    .pain-card i,
+    .direction-item i,
+    .skill-item i,
+    .caso-item i {
+      font-size: 24px;
+      color: var(--accent-text);
+      background: var(--accent-bg);
+      padding: 10px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .pain-card p,
+    .direction-item span,
+    .skill-item,
+    .caso-item {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* diff */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .diff-col {
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .diff-col-good {
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.03) 0%, var(--bg-secondary) 100%);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 40px rgba(37, 99, 235, 0.08);
+    }
+
+    .diff-header {
+      font-weight: 800;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .diff-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .diff-list li {
+      font-size: 15px;
+      color: var(--text-muted);
+      padding-left: 32px;
+      position: relative;
+    }
+
+    .diff-list li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      color: #ef4444;
+      font-weight: bold;
+      background: rgba(239, 68, 68, 0.1);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .diff-col-good .diff-list li::before {
+      content: "✓";
+      color: var(--success);
+      background: rgba(16, 185, 129, 0.1);
+      font-size: 12px;
+    }
+
+    .diff-col-good .diff-list li {
+      color: var(--text);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .tag {
+      background: rgba(0, 0, 0, 0.03);
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .tag:hover {
+      background: var(--accent-bg);
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    /* reviews */
+    .reviews-header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .reviews-score {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      padding: 20px 30px;
+      text-align: center;
+      border: 1px solid var(--border);
+      min-width: 160px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .score-num {
+      font-size: 48px;
+      font-weight: 900;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .score-stars {
+      color: var(--star);
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin: 4px 0;
+    }
+
+    .score-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 2rem 0;
+    }
+
+    .review-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .review-card:hover {
+      border-color: rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .review-top {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+
+    .review-avatar {
+      width: 50px;
+      height: 50px;
+      background: var(--accent-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--accent-text);
+      font-size: 18px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .review-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .review-stars {
+      color: var(--star);
+      font-size: 14px;
+    }
+
+    .review-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .reviews-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 12px 28px;
+      transition: all 0.3s;
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .reviews-link:hover {
+      background: var(--accent-bg);
+      border-color: var(--accent);
+      color: var(--accent-text);
+    }
+
+    /* planes */
+    .planes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 3rem;
+    }
+
+    .plan-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .plan-card.featured {
+      border: 1px solid var(--accent);
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.02) 0%, var(--bg-secondary) 100%);
+      transform: scale(1.02);
+    }
+
+    .plan-card.featured:hover {
+      transform: scale(1.02) translateY(-10px);
+      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.12);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--accent-gradient);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 20px;
+      border-bottom-left-radius: var(--radius-lg);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .plan-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .plan-price {
+      font-size: 48px;
+      font-weight: 900;
+      margin: 16px 0;
+      color: #0f172a;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .plan-price span {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .plan-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin: 0 0 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .plan-features li {
+      font-size: 15px;
+      display: flex;
+      gap: 12px;
+      color: var(--text);
+      align-items: flex-start;
+    }
+
+    .plan-features li i {
+      color: var(--success);
+      font-size: 20px;
+      flex-shrink: 0;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 50%;
+      padding: 2px;
+    }
+
+    .plan-cta {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.02);
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    .plan-cta:hover {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .plan-card.featured .plan-cta {
+      background: var(--accent-gradient);
+      border: none;
+      color: white;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+    }
+
+    .plan-card.featured .plan-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+    }
+
+    .cupos-aviso {
+      margin-top: 3rem;
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      padding: 16px 24px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      color: var(--warning-text);
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.05);
+    }
+
+    /* FAQ */
+    .faq-list {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-secondary);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 16px;
+      padding: 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+      color: var(--text);
+    }
+
+    .faq-q:hover {
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    .faq-a {
+      padding: 0 24px 24px;
+      color: var(--text-muted);
+      font-size: 15px;
+      display: none;
+      line-height: 1.7;
+    }
+
+    .faq-a.open {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s;
+      font-size: 20px;
+      color: var(--accent-text);
+    }
+
+    .faq-icon.open {
+      transform: rotate(180deg);
+    }
+
+    .cta-final {
+      text-align: center;
+      padding: 4rem 0;
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(37, 99, 235, 0.03) 100%);
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-final h2 {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .cta-final p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .no-commit {
+      margin-top: 1.5rem;
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .sec-title {
+        font-size: 26px;
+      }
+
+      .plan-card.featured {
+        transform: none;
+      }
+
+      .plan-card.featured:hover {
+        transform: translateY(-10px);
+      }
+
+      .reviews-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+
+    /* Reviews Section Styles */
+    .social-proof {
+      padding: 4rem 1.5rem;
+      background-color: #ffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .google-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .google-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    .rating-block {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .big-score {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .stars-row {
+      color: #fbbf24;
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-orb-1"></div>
+  <div class="bg-orb-2"></div>
+  <div class="container">
+    <!-- Hero – primera persona -->
+    <section class="hero">
+      <div class="hero-brand"><span>Acompañamiento</span> Tecnológico · Anibal Copitan</div>
+      <div class="hero-avatar">
+        <img src="https://anibalcopitan.com/anibal-profile.jpg" alt="Anibal Copitan" />
+      </div>
+      <h1>Te ayudo a desbloquear tu proyecto<br>y <em>avanzar más rápido</em> con mi Acompañamiento</h1>
+      <p class="hero-sub">No compras horas de consultoría fría. <strong>Compras acceso directo a mí:</strong> alguien
+        que conoce tu
+        contexto, te dice exactamente qué hacer y te acompaña hasta que resuelvas.</p>
+      <div class="scarcity-bar">
+        <span class="scarcity-text">
+          <i class="ti ti-users" style="font-size: 18px; color: #d97706;"></i>
+          <span>Solo <strong>10 clientes</strong> por calidad</span>
+        </span>
+        <div class="scarcity-dots">
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20quiero%20información%20sobre%20tu%20acompañamiento%20tecnológico"
+        class="cta-whatsapp">
+        <i class="ti ti-brand-whatsapp"></i> Escríbeme por WhatsApp
+      </a>
+      <div class="cta-sub"><i class="ti ti-clock"></i> Respondo personalmente en menos de 24h</div>
+      <p class="hero-meta">Sin permanencia mínima · Cancela cuando tú quieras · Primera consulta sin compromiso</p>
+    </section>
+
+    <!-- Google Reviews (prueba social real) -->
+    <section class="social-proof">
+      <div class="google-summary">
+        <div class="google-header">
+          <!-- Google 'G' Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+              fill="#4285F4"></path>
+            <path
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+              fill="#34A853"></path>
+            <path
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+              fill="#FBBC05"></path>
+            <path
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+              fill="#EA4335"></path>
+          </svg>
+          <span>Google Reviews</span>
+        </div>
+        <div class="rating-block">
+          <span class="big-score">5.0</span>
+          <div class="stars-row">★★★★★</div>
+        </div>
+        <p class="review-count-text">Descubre por qué mis clientes confían</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">GM</div>
+            <div class="review-meta">
+              <span class="review-name">Giancarlo Matos</span>
+              <div class="review-stars-small">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Me brindó asesoría técnica para mi proyecto de herramienta para autos. Me ayudó un
+            montón a aterrizar los requerimientos... 100% recomendado."</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">AE</div>
+            <div class="review-meta">
+              <span class="review-name">Alex Eduardo</span>
+              <div class="review-stars-small">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Trabajamos con Anibal en la publicación de nuestra aplicación. Nos apoyó en todo el
+            proceso técnico y resolvió observaciones de Google Play."</p>
+        </div>
+      </div>
+
+      <div class="reviews-action">
+        <a href="https://maps.app.goo.gl/JRrBrmTmXPokXJyt6" target="_blank" class="btn-text">
+          Ver más opiniones reales en Google Maps
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- DIRECCIÓN real: lo que yo te entrego -->
+    <section class="section-alt">
+      <div class="sec-label">Mi conocimiento, a tu disposición</div>
+      <div class="sec-title">Te enseño desde cero y sin filtros</div>
+      <p class="direction-intro" style="margin-bottom:1.4rem; color: var(--text-muted);">No necesitas saber de
+        tecnología. Si estás en cero, te lo traduzco. Obtienes acceso directo a mi experiencia y mis proyectos reales:
+      </p>
+      <div class="direction-grid">
+        <div class="direction-item"><i class="ti ti-brain"></i><span>Acceso directo a mi conocimiento y
+            experiencia.</span></div>
+        <div class="direction-item"><i class="ti ti-school"></i><span>Te enseño con peras y manzanas.</span></div>
+        <div class="direction-item"><i class="ti ti-folder-open"></i><span>Te muestro mis proyectos por dentro.</span>
+        </div>
+        <div class="direction-item"><i class="ti ti-message-2-exclamation"></i><span>Respuestas honestas, sin filtros ni
+            humo.</span></div>
+        <div class="direction-item"><i class="ti ti-ban"></i><span>Evitas errores que cuestan meses y dinero.</span>
+        </div>
+        <div class="direction-item"><i class="ti ti-rocket"></i><span>Te guío paso a paso hasta que funcione.</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Planes: 1ra persona sin vueltas -->
+    <section>
+      <div class="sec-label">Planes simples</div>
+      <div class="sec-title">Elige el plan de acompañamiento ideal para ti</div>
+      <div>
+        <p>Sin contratos largos, sin complicaciones. Empieza con el plan que mejor se adapte a tu etapa actual. </p>
+      </div>
+
+      <div class="planes-grid">
+        <div class="plan-card">
+          <div class="plan-name">Plan Exploración</div>
+          <div class="plan-price">S/ 69 <span>/ mes ($20)</span></div>
+          <div class="plan-desc">Ideal para dudas puntuales y orientación ligera.</div>
+          <ul class="plan-features">
+            <li><i class="ti ti-circle-check"></i> 1 reunión semanal corta (15 min)</li>
+            <li><i class="ti ti-circle-check"></i> Consultas por WhatsApp</li>
+            <li><i class="ti ti-circle-check"></i> Te explico paso a paso desde cero</li>
+            <li><i class="ti ti-circle-check"></i> Acceso a mi experiencia sin filtros</li>
+          </ul>
+          <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20me%20interesa%20el%20Plan%20Inicial%20de%20acompañamiento"
+            class="plan-cta">Lo quiero</a>
+        </div>
+        <div class="plan-card featured">
+          <div class="popular-badge">⭐ Más popular</div>
+          <div class="plan-name">Plan Despegue</div>
+          <div class="plan-price">S/ 179 <span>/ mes ($50)</span></div>
+          <div class="plan-desc">Para proyectos activos que necesitan desbloquearse cada semana.</div>
+          <ul class="plan-features">
+            <li><i class="ti ti-circle-check"></i> Consultas ilimitadas por WhatsApp</li>
+            <li><i class="ti ti-circle-check"></i> 1 reunión semanal (videollamada)</li>
+            <li><i class="ti ti-circle-check"></i> Revisión de código / despliegues</li>
+            <li><i class="ti ti-circle-check"></i> Ayuda con Linux, VPS, Docker</li>
+            <li><i class="ti ti-circle-check"></i> Automatizaciones e integraciones</li>
+          </ul>
+          <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20quiero%20el%20Plan%20Avance" class="plan-cta">Elegir
+            Avance</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Plan Brazo Derecho</div>
+          <div class="plan-price">S/ 349 <span>/ mes ($100)</span></div>
+          <div class="plan-desc">Acompañamiento completo para proyectos serios.</div>
+          <ul class="plan-features">
+            <li><i class="ti ti-circle-check"></i> Prioridad total en respuestas</li>
+            <li><i class="ti ti-circle-check"></i> Reuniones semanales estratégicas</li>
+            <li><i class="ti ti-circle-check"></i> Revisión de arquitectura y escalado</li>
+            <li><i class="ti ti-circle-check"></i> Estrategia técnica + lanzamiento</li>
+            <li><i class="ti ti-circle-check"></i> Soporte en producción</li>
+          </ul>
+          <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20me%20interesa%20el%20Plan%20Impulso"
+            class="plan-cta">Impulsar proyecto</a>
+        </div>
+      </div>
+      <div class="cupos-aviso">
+        <i class="ti ti-alert-circle"></i> Por calidad, solo 10 clientes activos. Cuando se llenan los cupos cierro
+        inscripciones hasta nuevo aviso.
+      </div>
+    </section>
+
+    <!-- FAQ primera persona -->
+    <section class="section-alt">
+      <div class="sec-label">Preguntas frecuentes</div>
+      <div class="sec-title">Lo que suelen preguntarme antes de empezar</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">¿Desarrollas el proyecto completo? <i
+              class="ti ti-chevron-down faq-icon"></i></div>
+          <div class="faq-a">Depende del alcance. Mi foco es el acompañamiento: ayudarte a tomar decisiones correctas,
+            desbloquearte y avanzar rápido. En muchos casos, eso vale más que delegar todo.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">¿Puedo cancelar cuando quiera? <i
+              class="ti ti-chevron-down faq-icon"></i></div>
+          <div class="faq-a">Totalmente. Sin permanencia ni cláusulas extra. Pagas mes a mes y cancelas cuando decidas.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">¿Sirve si estoy empezando desde cero? <i
+              class="ti ti-chevron-down faq-icon"></i></div>
+          <div class="faq-a">Sí, tengo clientes desde nivel principiante hasta seniors. Adapto mi lenguaje y guía a tu
+            ritmo.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">¿Las reuniones son por videollamada? <i
+              class="ti ti-chevron-down faq-icon"></i></div>
+          <div class="faq-a">Sí, normalmente Google Meet o Zoom, coordinamos según tu disponibilidad.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">¿Por qué debería elegirte a ti y no solo ChatGPT? <i
+              class="ti ti-chevron-down faq-icon"></i></div>
+          <div class="faq-a">ChatGPT no conoce tu contexto, ni recuerda lo que ya fallaste. Yo sí. Te doy decisiones
+            concretas y hago seguimiento, no fragmentos genéricos.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final personal -->
+    <section class="cta-final">
+      <h2>¿Listo para que tu proyecto despegue?</h2>
+      <p>Cuéntame qué estás construyendo y te diré cómo puedo ayudarte. La primera conversación es sin compromiso.</p>
+      <a href="https://wa.me/51970142637?text=Hola%20Anibal,%20quiero%20información%20sobre%20acompañamiento%20tecnológico"
+        class="cta-whatsapp">
+        <i class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp
+      </a>
+      <div class="cta-sub"><i class="ti ti-clock"></i> Te respondo personalmente en menos de 24h</div>
+      <p class="no-commit">Sin permanencia · Sin contratos · Cancela cuando gustes</p>
+    </section>
+  </div>
+
+  <script>
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const icon = el.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+      // (opcional: cierro otros para limpiar, pero no es obligatorio)
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+      if (!isOpen) {
+        answer.classList.add('open');
+        icon.classList.add('open');
+      }
+    }
+  </script>
+</body>
+
+</html>
