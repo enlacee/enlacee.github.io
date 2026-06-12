@@ -35,7 +35,7 @@
       --radius-sm: 12px;
       --radius-md: 20px;
       --radius-lg: 32px;
-      --max-width: 1080px;
+      --max-width: 1200px;
     }
 
     * {
@@ -55,10 +55,18 @@
     }
 
     .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem; /* reduced horizontal padding */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}
 
     /* Premium Background Orbs */
     .bg-orb-1,
@@ -203,6 +211,7 @@
         justify-content: center;
         padding: 10px;
       }
+
     }
 
     /* HERO */
@@ -602,9 +611,17 @@
 
     .reviews-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      /* On larger screens show multiple cards, on small screens stack vertically */
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin: 2rem 0;
+    }
+
+    /* Mobile override: single column layout */
+    @media (max-width: 480px) {
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .review-card {
@@ -1005,9 +1022,10 @@
 </head>
 
 <body>
-  <div class="bg-orb-1"></div>
-  <div class="bg-orb-2"></div>
+
   <div class="container">
+    <div class="bg-orb-1"></div>
+    <div class="bg-orb-2"></div>
     <!-- Hero – primera persona -->
     <section class="hero">
       <div class="hero-brand"><span>Acompañamiento</span> Tecnológico · Anibal Copitan</div>
@@ -1115,7 +1133,7 @@
 
     <!-- DIRECCIÓN real: lo que yo te entrego -->
     <section class="section-alt">
-      <div class="sec-label">Mi conocimiento, a tu disposición</div>
+      <div class="sec-label">Conocimiento y experiencia para tu éxito</div>
       <div class="sec-title">Te enseño desde cero y sin filtros</div>
       <p class="direction-intro" style="margin-bottom:1.4rem; color: var(--text-muted);">No necesitas saber de
         tecnología. Si estás en cero, te lo traduzco. Obtienes acceso directo a mi experiencia y mis proyectos reales:
@@ -1246,7 +1264,8 @@
     <section class="cta-final">
       <h2>¿Listo para que tu proyecto despegue?</h2>
       <p>Cuéntame qué estás construyendo y te diré cómo puedo ayudarte. La primera conversación es sin compromiso.</p>
-      <a href="https://wa.me/51970142637?text=Hola%20An%C3%ADbal%2C%20tengo%20una%20duda%20sobre%20tu%20acompa%C3%B1amiento%20tecnol%C3%B3gico" class="cta-whatsapp"><i class="ti ti-brand-whatsapp"></i> Escríbeme</a>
+      <a href="https://wa.me/51970142637?text=Hola%20An%C3%ADbal%2C%20tengo%20una%20duda%20sobre%20tu%20acompa%C3%B1amiento%20tecnol%C3%B3gico"
+        class="cta-whatsapp"><i class="ti ti-brand-whatsapp"></i> Escríbeme</a>
       <div class="cta-sub"><i class="ti ti-clock"></i> Te respondo personalmente en menos de 24h</div>
       <p class="no-commit">Sin permanencia · Sin contratos · Cancela cuando gustes</p>
     </section>
