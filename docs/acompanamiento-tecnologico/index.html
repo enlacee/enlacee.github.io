@@ -55,18 +55,49 @@
     }
 
     .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem; /* reduced horizontal padding */
-  width: 100%;
-  box-sizing: border-box;
-}
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+      /* reduced horizontal padding */
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 0.5rem;
-  }
-}
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 0.25rem;
+      }
+
+      /* Reduce spacing for sections on mobile */
+      section {
+        padding: 2rem 0;
+      }
+
+      .section-alt {
+        padding: 1.5rem 1rem;
+        margin: 0.5rem 0;
+      }
+
+      .sec-label {
+        margin-bottom: 0.25rem;
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+
+      .sec-title {
+        font-size: 20px;
+        margin-bottom: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero-sub {
+        font-size: 14px;
+        margin-bottom: 1rem;
+      }
+    }
 
     /* Premium Background Orbs */
     .bg-orb-1,
@@ -80,16 +111,12 @@
     }
 
     .bg-orb-1 {
-      width: 600px;
-      height: 600px;
       background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
       top: -150px;
       right: -100px;
     }
 
     .bg-orb-2 {
-      width: 500px;
-      height: 500px;
       background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, transparent 70%);
       top: 300px;
       left: -150px;
@@ -1018,6 +1045,44 @@
       font-size: 1.5rem;
       letter-spacing: 0.1em;
     }
+
+    /* Contenedor de la prueba TikTok */
+    .tiktok-showcase {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1rem;
+      /* Consistente con .section-alt */
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    /* Imagen de la cuenta */
+    .tiktok-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      margin: 0.75rem auto;
+      display: block;
+    }
+
+    /* Estadísticas alineadas verticalmente */
+    .tiktok-stats p {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .tiktok-stats strong {
+      color: var(--accent-text);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+      .tiktok-showcase {
+        padding: 1rem 0.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -1060,6 +1125,20 @@
       </a>
       <div class="cta-sub"><i class="ti ti-clock"></i> Respondo personalmente en menos de 24h</div>
       <p class="hero-meta">Sin permanencia mínima · Cancela cuando tú quieras · Primera consulta sin compromiso</p>
+    </section>
+
+    <!-- ==== → NUEVA SECCIÓN TIKTOK ← ==== -->
+    <section class="section-alt tiktok-showcase">
+      <div class="sec-label">Prueba Social</div>
+      <div class="sec-title">Mi contenido viral en TikTok</div>
+      <div class="tiktok-card">
+        <img src="anibal-tiktok-account.png" alt="Captura de mi cuenta de TikTok" class="tiktok-img">
+        <div class="tiktok-stats">
+          <p><strong>500 k</strong> visualizaciones</p>
+          <p><strong>7 k</strong> seguidores</p>
+          <p><strong>28 k</strong> “likes” acumulados</p>
+        </div>
+      </div>
     </section>
 
     <!-- Google Reviews (prueba social real) -->
