@@ -339,6 +339,100 @@
                 padding: 0.9rem;
             }
         }
+
+        /** More css INCLUDE components **/
+        .hero-card {
+            width: 100%;
+            display: block;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            animation: glow-pulse 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-3px) scale(1.01);
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.62rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 0.3rem 0.7rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 9999px;
+            margin-bottom: 0.85rem;
+            position: relative;
+        }
+
+        .hero-card h2 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            position: relative;
+            line-height: 1.3;
+        }
+
+        .hero-card .hero-desc {
+            font-size: 0.85rem;
+            opacity: 0.92;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .hero-arrow {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.1rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover .hero-arrow {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+
+        /* ===== Social Proof ===== */
+        .social-proof {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            /* margin: 0.75rem 0 0.5rem; */
+        }
+
+        .social-proof strong {
+            color: var(--primary);
+        }
+
+        /* ===== Pulse Animation ===== */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite ease-in-out;
+        }
+
     </style>
 </head>
 
@@ -352,23 +446,73 @@
             </div>
             <h1>Construyo apps reales con Linux</h1>
             <p>Te enseño a crear apps con Linux que puedes convertir en dinero 💻💸</p>
-            <p>Proyectos reales: OkeyPay y Cobra con 1 Link</p>
         </header>
 
-        <!-- Social Media -->
-        <div class="social-icons">
-            <a href="https://blog.anibalcopitan.com" class="social-link" title="Blog"><i class="fas fa-blog"></i></a>
-            <a href="https://www.youtube.com/@anibal-linux" class="social-link" title="YouTube"><i
-                    class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@anibal.linux" class="social-link" title="TikTok"><i
-                    class="fab fa-tiktok"></i></a>
-            <a href="https://anibalcopitan.com/" class="social-link" title="Web"><i class="fas fa-globe"></i></a>
+        <!-- Hero CTA — Producto Principal -->
+        <div class="links-group" style="margin-bottom: 2rem;">
+            <a href="../android-saas/index.html" class="hero-card pulse" id="cta-hero">
+                <span class="hero-badge">Producto Principal</span>
+                <h2><i class="fas fa-rocket"></i> Android SaaS — Drive Compartido</h2>
+                <p class="hero-desc">Crea aplicaciones Android listas para vender utilizando Kotlin, Google Sheets, Apps Script y Backend.</p>
+                <span class="hero-arrow">→</span>
+            </a>
+            <p class="social-proof">Más de <strong>50</strong> estudiantes ya comenzaron a crear sus propias aplicaciones.</p>
         </div>
 
-        <!-- Acompañamiento (Estrella) -->
-        <h2 class="section-title" style="color: #f59e0b;">⭐ Lo más solicitado</h2>
+
+        <br/>
+        <div class="links-group">
+            <a href="https://blog.anibalcopitan.com" class="link-card" style="
+    border: 0;
+    border-radius: 0px;
+">
+                <i class="fas fa-terminal"></i> Mi Blog: Tutoriales y Guías Linux
+            </a>
+        </div>
+        <br/>
+
+
+
+        <!-- Products Section -->
+        <h2 class="section-title">Más</h2>
+        <!-- <a href="../productos/" class="link-card featured"
+            style="margin-bottom: 1.5rem; background: linear-gradient(45deg, var(--primary), var(--accent)); color: white;">
+            <i class="fas fa-shopping-cart"></i> ¿Qué vendes? (Catálogo Completo)
+        </a> -->
+
+
+        <!-- Links Group -->
+        <!-- <h2 class="section-title">Contacto y Canales</h2> -->
+        <div class="links-group">
+            <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20vi%20tu%20TikTok%20y%20queria%20hacerte%20una%20pregunta"
+                class="link-card featured">
+                <i class="fab fa-whatsapp"></i> 👋 ¡Hola! Escríbeme por aquí
+            </a>
+            <a href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO?mode=r_c" class="link-card">
+                <i class="fab fa-whatsapp"></i> Grupo en WhatsApp
+            </a>
+            <p class="social-proof">📢 Todo sobre <strong>Anibal Linux</strong>: apps, cursos y novedades.</p>
+        </div>
+<br/>
+
+
+
+        <div class="products-grid">
+            <a href="https://play.google.com/store/apps/developer?id=Anibal+Copitan" class="product-card">
+                <div class="product-icon">
+                    <i class="fab fa-google-play"></i>
+                </div>
+                <div class="product-info">
+                    <h3>Aplicaciones publicadas</h3>
+                    <p>Mira las apps reales en Google Play Store y sube tu app en tiempo récord.</p>
+                </div>
+            </a>
+        </div>
+
+<br/>
+
         <div class="links-group" style="margin-bottom: 2rem;">
-            <a href="../acompanamiento-tecnologico/index.html" class="link-card featured pulse"
+            <a href="../acompanamiento-tecnologico/index.html" class="link-card featured"
                 style="background: #3b82f6; color: #fff; display: flex; flex-direction: column; text-align: center; padding: 1.25rem; border: none;">
                 <div style="font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 800;">
                     <i class="fas fa-rocket"></i> Acompañamiento Tecnológico 1 a 1
@@ -380,33 +524,32 @@
             </a>
         </div>
 
-        <!-- Links Group -->
-        <h2 class="section-title">Contacto y Canales</h2>
-        <div class="links-group">
-            <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20vi%20tu%20TikTok%20y%20queria%20hacerte%20una%20pregunta"
-                class="link-card featured pulse">
-                <i class="fab fa-whatsapp"></i> 👋 ¡Hola! Escríbeme por aquí
-            </a>
-            <a href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO?mode=r_c" class="link-card">
-                <i class="fab fa-whatsapp"></i> Grupo de Linux en WhatsApp
-            </a>
-        </div>
 
-        <!-- Resources Section -->
-        <h2 class="section-title">Recursos Gratuitos</h2>
-        <div class="links-group">
-            <a href="https://blog.anibalcopitan.com" class="link-card">
-                <i class="fas fa-terminal"></i> Mi Blog: Tutoriales y Guías Linux
-            </a>
-        </div>
-
-        <!-- Products Section -->
-        <h2 class="section-title">Mis Productos Digitales</h2>
-        <a href="../productos/" class="link-card featured"
-            style="margin-bottom: 1.5rem; background: linear-gradient(45deg, var(--primary), var(--accent)); color: white;">
-            <i class="fas fa-shopping-cart"></i> ¿Qué vendes? (Catálogo Completo)
-        </a>
         <div class="products-grid">
+
+
+            <a href="https://a.co/d/2wmoHbw" class="product-card">
+                <div class="product-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="product-info">
+                    <h3>Migrando a Linux (Ebook)</h3>
+                    <p>Tu guía definitiva para dominar el sistema del pingüino.</p>
+                </div>
+            </a>
+
+
+            <a href="https://okeypay.anibalcopitan.com/" class="product-card">
+                <div class="product-icon">
+                    <i class="fab fa-android"></i>
+                </div>
+                <div class="product-info">
+                    <h3>App OkeyPay Verifica</h3>
+                    <p>Gestiona y verifica tus pagos de forma inteligente.</p>
+                </div>
+            </a>
+
+
             <a href="https://blog.anibalcopitan.com/2026/03/pasarela-de-pago-simple-para-productos.html"
                 class="product-card">
                 <div class="product-icon">
@@ -417,15 +560,7 @@
                     <p>Vende tus productos digitales de forma simple con un solo link y Excel.</p>
                 </div>
             </a>
-            <a href="https://anibalcopitan.com/pago/?p=2h14seL4" class="product-card">
-                <div class="product-icon">
-                    <i class="fab fa-android"></i>
-                </div>
-                <div class="product-info">
-                    <h3>Publicar App Android (Play Store)</h3>
-                    <p>Sube tu app en tiempo récord. Agenda una reunión técnica (Costo descontado del proyecto).</p>
-                </div>
-            </a>
+
             <a href="https://anibalcopitan.com/" class="product-card">
                 <div class="product-icon">
                     <i class="fas fa-rocket"></i>
@@ -435,25 +570,20 @@
                     <p>Aprende a montar tu nube privada y infraestructura desde cero.</p>
                 </div>
             </a>
-            <a href="https://okeypay.anibalcopitan.com/" class="product-card">
-                <div class="product-icon">
-                    <i class="fas fa-wallet"></i>
-                </div>
-                <div class="product-info">
-                    <h3>App OkeyPay Verifica</h3>
-                    <p>Gestiona y verifica tus pagos de forma inteligente.</p>
-                </div>
-            </a>
-            <a href="https://a.co/d/2wmoHbw" class="product-card">
-                <div class="product-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div class="product-info">
-                    <h3>Migrando a Linux (Ebook)</h3>
-                    <p>Tu guía definitiva para dominar el sistema del pingüino.</p>
-                </div>
-            </a>
         </div>
+
+        <br/>
+                <!-- Social Media -->
+        <div class="social-icons">
+            <a href="https://blog.anibalcopitan.com" class="social-link" title="Blog"><i class="fas fa-blog"></i></a>
+            <a href="https://www.youtube.com/@anibal-linux" class="social-link" title="YouTube"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@anibal.linux" class="social-link" title="TikTok"><i
+                    class="fab fa-tiktok"></i></a>
+            <a href="https://anibalcopitan.com/" class="social-link" title="Web"><i class="fas fa-globe"></i></a>
+        </div>
+
+                <br/>
 
         <!-- Footer -->
         <footer>
