@@ -433,6 +433,94 @@
             animation: pulse 2s infinite ease-in-out;
         }
 
+
+        /* WhatsApp contact card */
+        .wa-card {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--glass);
+            border: 1px solid #25D366;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .wa-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .wa-title i {
+            color: #25D366;
+            margin-right: 0.4rem;
+        }
+
+        .wa-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.6rem;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            padding: 0.5rem 0.5rem 0.5rem 0.9rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .wa-number {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            -webkit-user-select: all;
+            user-select: all;
+        }
+
+        .wa-copy {
+            min-height: 44px;
+            padding: 0 1rem;
+            border: 0;
+            border-radius: 8px;
+            background: var(--primary);
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .wa-copy.done {
+            background: #25D366;
+        }
+
+        .wa-open {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .wa-open i {
+            margin-right: 0.5rem;
+        }
+
+        .wa-help {
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            margin-top: 0.7rem;
+        }
+
+        .wa-status {
+            display: block;
+            min-height: 1.1em;
+            font-size: 0.82rem;
+            color: #25D366;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -484,10 +572,21 @@
         <!-- Links Group -->
         <!-- <h2 class="section-title">Contacto y Canales</h2> -->
         <div class="links-group">
-            <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20vi%20tu%20TikTok%20y%20queria%20hacerte%20una%20pregunta"
-                class="link-card featured">
-                <i class="fab fa-whatsapp"></i> 👋 ¡Hola! Escríbeme por aquí
-            </a>
+            <div class="wa-card">
+                <div class="wa-title"><i class="fab fa-whatsapp"></i> 👋 ¡Hola! Escríbeme por WhatsApp</div>
+                <div class="wa-row">
+                    <span class="wa-number" id="wa-number">+51 970 142 637</span>
+                    <button type="button" class="wa-copy" id="wa-copy" aria-label="Copiar número de WhatsApp">
+                        <i class="far fa-copy"></i> <span id="wa-copy-label">Copiar</span>
+                    </button>
+                </div>
+                <a href="https://wa.me/51970142637?text=Hola%20Anibal%2C%20vi%20tu%20TikTok%20y%20queria%20hacerte%20una%20pregunta"
+                    class="wa-open" id="wa-open" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Abrir WhatsApp
+                </a>
+                <p class="wa-help">¿No se abre? Copia el número, abre WhatsApp y pégalo en un chat nuevo.</p>
+                <span class="wa-status" id="wa-status" role="status" aria-live="polite"></span>
+            </div>
             <a href="https://chat.whatsapp.com/IyIscdh4ATwBFTISrXdMuO?mode=r_c" class="link-card">
                 <i class="fab fa-whatsapp"></i> Grupo en WhatsApp
             </a>
@@ -590,6 +689,80 @@
             <p>&copy; 2026 Anibal Copitan. Hecho con pasión por Linux.</p>
         </footer>
     </div>
+
+    <script>
+        (function () {
+            var NUMBER = '+51970142637';
+            var btn = document.getElementById('wa-copy');
+            var label = document.getElementById('wa-copy-label');
+            var status = document.getElementById('wa-status');
+            var numEl = document.getElementById('wa-number');
+            var timer;
+
+            function track(name) {
+                try { (window.dataLayer = window.dataLayer || []).push({ event: name }); } catch (e) { }
+            }
+
+            function fallbackCopy() {
+                var ok = false;
+                var ta = document.createElement('textarea');
+                ta.value = NUMBER;
+                ta.setAttribute('readonly', '');
+                ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                try { ta.setSelectionRange(0, NUMBER.length); ok = document.execCommand('copy'); } catch (e) { }
+                document.body.removeChild(ta);
+                return ok;
+            }
+
+            function selectNumber() {
+                try {
+                    var r = document.createRange();
+                    r.selectNodeContents(numEl);
+                    var s = window.getSelection();
+                    s.removeAllRanges();
+                    s.addRange(r);
+                } catch (e) { }
+            }
+
+            function feedback(ok) {
+                clearTimeout(timer);
+                if (ok) {
+                    btn.classList.add('done');
+                    label.textContent = '¡Copiado!';
+                    status.textContent = 'Número copiado. Pégalo en WhatsApp.';
+                } else {
+                    selectNumber();
+                    label.textContent = 'Copiar';
+                    status.textContent = 'Mantén presionado el número y elige "Copiar".';
+                }
+                timer = setTimeout(function () {
+                    btn.classList.remove('done');
+                    label.textContent = 'Copiar';
+                    status.textContent = '';
+                }, 3000);
+            }
+
+            btn.addEventListener('click', function () {
+                track('whatsapp_copy');
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(NUMBER).then(function () {
+                        feedback(true);
+                    }, function () {
+                        feedback(fallbackCopy());
+                    });
+                } else {
+                    feedback(fallbackCopy());
+                }
+            });
+
+            document.getElementById('wa-open').addEventListener('click', function () {
+                track('whatsapp_open');
+            });
+        })();
+    </script>
 
 </body>
 
